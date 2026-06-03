@@ -90,7 +90,7 @@
                 <div class="CodeBlock">
                     <span class="Keyword">var</span><span class="Argument">(name</span><span class="Operator"> = </span><span class="Explanation">{any}</span><span class="Argument">)</span>
                 </div>
-                <div class="Explanation"> Creates or updates a variable with the value {any}. You can also define a variable without a value to set it to an empty value. ("") <a class="Link" href="https://en.wikipedia.org/wiki/Snake_case" target="_blank">Snake case</a> recommended.</div> 
+                <div class="Explanation"> Creates or updates a variable with the value {any}. You can also define a variable without a value to set it to an empty string (""). <a class="Link" href="https://en.wikipedia.org/wiki/Snake_case" target="_blank">Snake case</a> recommended.</div> 
                 <div class="WideBreak"></div>
 
                 <div class="CodeBlock">
@@ -107,7 +107,7 @@
                     <div class="Break"></div>
                     <span class="Operator">&gt;&gt;</span>
                 </div>
-                <div class="Explanation"> Compares two values and runs the code inside if it's true.</div>
+                <div class="Explanation"> Compares two values and runs the code inside if the result is true. Skips the code block if false.</div>
                 <div class="WideBreak"></div>
 
                 <div class="CodeBlock">
@@ -115,7 +115,7 @@
                     <div class="Break"></div>
                     <span class="Operator">&gt;&gt;</span>
                 </div>
-                <div class="Explanation"> Runs the code inside if the preceding if statement is false. Else statements must be placed immediately after an if statement or else an <a href="errorguide.html" class="LinkErrorGuide">else block has no parent</a> error will occur.</div>
+                <div class="Explanation"> Runs the code inside if the preceding if statement is false. Else statements must be placed immediately after an if statement or an <a href="errorguide.html" class="LinkErrorGuide">else block has no parent</a> error will occur.</div>
                 <div class="WideBreak"></div>
 
                 <div class="CodeBlock">
@@ -135,7 +135,7 @@
                 <div class="CodeBlock">
                     <span class="Keyword">run</span><span class="Argument">(</span><span class="Explanation">{ref}</span><span class="Argument">)</span>
                 </div>
-                <div class="Explanation"> Reroutes the interpreter to the specified {ref} (use /reference_name to select a reference). Use /file:function to run a function in another file. The run() system is stack-based, meaning run() chaining is supported along with nesting with all control flow elements. Labels themselves shouldn't be nested. (Nothing really will happen, but it's generally discouraged since that approach just doesn't make sense) These calls can also contain parameters. (See <a class="LinkAdvancedTopics" href="advancedtopics.html">Advanced Topics</a> for more information)</div>
+                <div class="Explanation"> Reroutes the interpreter to the specified {ref} (use /reference_name to select a reference). Use /file:function to run a function from another file. The run() system is stack-based, meaning run() chaining is supported along with nesting with all control flow elements. Labels themselves shouldn't be nested (Discouraged since that approach just doesn't make sense and leads to many bugs). These calls can also contain parameters. (See <a class="LinkAdvancedTopics" href="advancedtopics.html">Advanced Topics</a> for more information)</div>
                 <div class="WideBreak"></div>
 
                 <div class="CodeBlock">
@@ -296,7 +296,7 @@
                 <div class="CodeBlock">
                     <span class="Keyword">exists</span><span class="Argument">(</span><span class="Explanation">{variable}</span><span class="Arrow"> => </span><span class="Argument">destination)</span>
                 </div>
-                <div class="Explanation">This command expects a literal variable as input (A variable without the @). Returns true if it exists, false if not.</div>
+                <div class="Explanation">This command expects a literal variable as input (A variable without the @). Returns true if it exists in variable registry, false if not.</div>
                 <div class="WideBreak"></div>
 
                 <div class="Explanation">Places to visit next:</div>
