@@ -299,6 +299,14 @@
                 <div class="Explanation">This command expects a literal variable as input (A variable without the @). Returns true if it exists in variable registry, false if not.</div>
                 <div class="WideBreak"></div>
 
+                <div class="CodeBlock">
+                    <span class="Keyword">turbo</span><span class="Argument">()</span><span class="Operator"> &lt;&lt;</span>
+                    <div class="Break"></div>
+                    <span class="Operator">&gt;&gt;</span>
+                </div>
+                <div class="Explanation">Runs the code inside as fast as the interpreter can manage. Running multiple commands in turbo() typically takes as long as running one command without turbo(). Any waiting blocks (Like paste(input"..."), wait(), etc.) that rely on pausing execution or long scripts in turbo() can cause the interpreter to stall or freeze.</div>
+                <div class="WideBreak"></div>
+
                 <div class="Explanation">Places to visit next:</div>
                 <div class="Explanation"><a class="LinkAdvancedTopics" href="advancedtopics.html">Advanced Topics</a></div>
                 <div class="Explanation"><a class="LinkErrorGuide" href="errorguide.html">Error Guide</a></div>
