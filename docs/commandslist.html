@@ -264,27 +264,6 @@
                 <div class="Explanation">Imports the variables from another file and allows you to call functions between the main file and the file you just imported. You can only nest calls between files by 1. Extensions are imported and referenced the same way. (See <a class="LinkExtensions" href="extensions.html">Extensions</a> for more information)</div>
                 <div class="WideBreak"></div>
 
-                <span class="White" id="PersistentStorage">Persistent Storage: </span>
-                <div class="Break"></div>
-
-                <div class="CodeBlock">
-                    <span class="Keyword">storage</span><span class="Argument">(</span><span class="Explanation">{str}</span><span class="Argument">)</span>
-                </div>
-                <div class="Explanation">References a storage directory for you to save and load to. (Creates a new one called {str} if one doesn't exist) Running storage("clear") clears all directories and cannot be undone. Directories can be swapped using the same command but with a different directory.</div>
-                <div class="WideBreak"></div>
-
-                <div class="CodeBlock">
-                    <span class="Keyword">save</span><span class="Argument">(</span><span class="Explanation">{slot}</span><span class="Argument">, </span><span class="Explanation">{any}</span><span class="Argument">)</span>
-                </div>
-                <div class="Explanation">Stores {any} in {slot} in the chosen directory. There are 100 slots in each directory. These slots persist until storage(clear) is run. They are overridden with a new value if save() is called with the same slot. If you enter an invalid slot, an <a class="LinkErrorGuide" href="errorguide.html">Invalid Save Slot</a> error is thrown.</div>
-                <div class="WideBreak"></div>
-
-                <div class="CodeBlock">
-                    <span class="Keyword">load</span><span class="Argument">(</span><span class="Explanation">{slot}</span><span class="Arrow"> => </span><span class="Argument">destination)</span>
-                </div>
-                <div class="Explanation">Loads the current value of {slot} inside the chosen directory.</div>
-                <div class="WideBreak"></div>
-
                 <span class="White" id="OtherCommands">Other Commands: </span>
                 <div class="Break"></div>
 
