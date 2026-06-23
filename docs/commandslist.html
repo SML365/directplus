@@ -35,7 +35,6 @@
                 <div class="Explanation">Special data types:</div>
                 <div class="Explanation">{list} = A list. Can be a literal list or a variable referencing a list.</div>
                 <div class="Explanation">{ref} = run() reference.</div>
-                <div class="Explanation">{slot} = Save/load slot. (1-100 per directory)</div>
                 <div class="Explanation">{file} = A name of a Direct+ file.</div>
                 <div class="WideBreak"></div>
 
@@ -292,11 +291,31 @@
                 <div class="WideBreak"></div>
 
                 <div class="CodeBlock">
+                    <span class="Keyword">wait</span><span class="Argument">(</span><span class="Explanation">{num}</span>)</span>
+                </div>
+                <div class="Explanation">Pauses execution for the given amount of time, in seconds. Decimals are supported.</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
                     <span class="Keyword">turbo</span><span class="Argument">()</span><span class="Operator"> &lt;&lt;</span>
                     <div class="Break"></div>
                     <span class="Operator">&gt;&gt;</span>
                 </div>
                 <div class="Explanation">Runs the code inside as fast as the interpreter can manage. Running multiple commands in turbo() typically takes as long as running one command without turbo(). Any waiting blocks (Like paste(input"..."), wait(), etc.) that rely on pausing execution or long scripts in turbo() can cause the interpreter to stall or freeze.</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">scope</span><span class="Argument">(<span class="Explanation">{str}</span>, <span class="Explanation">{str (optional)}</span>)</span><span class="Operator"> &lt;&lt;</span>
+                    <div class="Break"></div>
+                    <span class="Operator">&gt;&gt;</span>
+                </div>
+                <div class="Explanation">Creates a namespaced data block where you can define variables. Other commands can be placed inside scope blocks, but only variable definitions are recommended. The second optional string acts as an additional identifier. Scope blocks can be nested. Variables in scope blocks are referenced by order of nested scope blocks: @cat:barley:food:salmon:calories. cat:barley are grouped, with 'cat' being the name and 'barley' being the ID. Then, food:salmon are grouped the same way, and 'calories' is the variable. (See <a class="LinkAdvancedTopics" href="advancedtopics.html">Advanced Topics</a> for more information)</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">build</span><span class="Argument">()</span>
+                </div>
+                <div class="Explanation">Builds the GUI from the defined scope tree. Must be called after all scope blocks are defined. (See <a class="LinkAdvancedTopics" href="advancedtopics.html">Advanced Topics</a> for more information)</div>
                 <div class="WideBreak"></div>
 
                 <div class="Explanation">Places to visit next:</div>

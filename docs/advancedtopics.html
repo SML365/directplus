@@ -378,6 +378,335 @@
                 </div>
                 <div class="WideBreak"></div>
 
+                <span class="White" id="GUI">Making Graphical User Interfaces (GUIs)</span>
+                <div class="Break"></div>
+
+                <div class="Explanation">As of v4.00, Direct+ supports making interactive Graphical User Interfaces using scope() blocks and the build() command.  These new systems allow users to program full applications in Direct+, expanding beyond the original console system. Before you explore this section, make sure you have a decent understanding of how scope() blocks work, as they won't be walked through step-by-step in this section.</div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Defining the Application Window: </div>
+                <div class="Break"></div>
+
+                <div class="Explanation">To build an application, you need a window container to put your app in. Making one in Direct+ can be done with a simple scope() block, as shown: </div>
+                <div class="Break"></div>
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Keyword">scope</span><span class="Argument">(<span class="String">"app_name"</span>)</span><span class="Operator"> &lt;&lt;</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(title</span><span class="Operator"> = </span><span class="String">"my app"</span><span class="Argument">)</span> <span class="Explanation"> $ The little text on the top of the window.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(id</span><span class="Operator"> = </span><span class="String">"id"</span><span class="Argument">)</span> <span class="Explanation"> $ Something different from your app name so the engine can differentiate between window and app variables. You'll never use this in your program so it can be anything. Window resizing and moving breaks if the names conflict.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(x</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ The starting X position of your app window, Scratch-style coordinates are used. (center = {0, 0})</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(y</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ The starting Y position of your app window, Scratch-style coordinates are used.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(width</span><span class="Operator"> = <span class="Argument">300)</span> <span class="Explanation"> $ The starting (and minimum) width of your app window.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(height</span><span class="Operator"> = <span class="Argument">300)</span> <span class="Explanation"> $ The starting (and minimum) height of your app window.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(base_color</span><span class="Operator"> = <span class="Argument">{hue, brightness, gray (0/1)})</span> <span class="Explanation"> $ The color of the window base (where all your UI elements live). Gray is either 0/1 and toggles hue vs. grayscale mode. This color system is used throughout the engine. Note that failing to include all the color parameters to any UI element will result in an <a class="LinkErrorGuide" href="errorguide.html" target="_blank">invalid token</a> error. </span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(titlebar_color</span><span class="Operator"> = <span class="Argument">{hue, brightness, gray})</span> <span class="Explanation"> $ The color of the window titlebar.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(outline_color</span><span class="Operator"> = <span class="Argument">{hue, brightness, gray})</span> <span class="Explanation"> $ The color of the window border.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(draggable</span><span class="Operator"> = <span class="Bool">true/false)</span> <span class="Explanation"> $ Can your window be moved around?</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(resizable</span><span class="Operator"> = <span class="Bool">true/false)</span> <span class="Explanation"> $ Can your window be resized?</span>
+                    </div>
+                    <div>
+                        <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
+                    </div>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Introduction to UI Elements: </div>
+                <div class="Break"></div>
+
+                <div class="Explanation">All UI elements in Direct+'s GUI system are made out of scope() blocks and variables. However, they have a few key differences: </div>
+                <div class="Break"></div>
+                
+                <div class="Explanation">1. All UI Elements use a different coordinate system than Scratch. {0, 0} is at the top left of the window, and moving right adds to the X position, and moving left subtracts. However, moving down subtracts from the Y position (Unlike traditional window coordinates in other programs, but consistent with Scratch coordinates) and moving up adds.</div>
+                <div class="Explanation">2. While the windows are their own container, since the elements are nested in the window, they move with the window as well. Their coordinates do not change relative to the window's position or size.</div>
+                <div class="Break"></div>
+
+                <div class="Explanation">Text: </div>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Explanation">$ Note that this should be nested in a window block</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">scope</span><span class="Argument">(<span class="String">"text"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(contents</span><span class="Operator"> = </span><span class="String">"text goes here!"</span><span class="Argument">)</span> <span class="Explanation"> $ What the text should say</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(x</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ The X position of your text element. Coordinate system shown above.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(y</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ The Y position of your text element. Coordinate system shown above.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(size</span><span class="Operator"> = <span class="Argument">1)</span> <span class="Explanation"> $ The scale of your text. 1 = default size. </span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(color</span><span class="Operator"> = <span class="Argument">{hue, brightness, gray (0/1)})</span> <span class="Explanation"> $ The color of your text.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(align</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ Alignment of your text. 0 = left, 1 = right, 0.5 = center. Accepts any float between 0 and 1.</span>
+                    </div>
+                    <div>
+                        <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
+                    </div>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Rectangles: </div>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Explanation">$ Note that this should be nested in a window block</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">scope</span><span class="Argument">(<span class="String">"rectangle"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(x</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ The X position of your rectangle. Coordinate system shown above.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(y</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ The Y position of your rectangle. Coordinate system shown above.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(width</span><span class="Operator"> = <span class="Argument">100)</span> <span class="Explanation"> $ The width of your rectangle. Width/height expand from center of the rectangle.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(height</span><span class="Operator"> = <span class="Argument">100)</span> <span class="Explanation"> $ The height of your rectangle.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(color</span><span class="Operator"> = <span class="Argument">{hue, brightness, gray (0/1)})</span> <span class="Explanation"> $ The color of your rectangle.</span>
+                    </div>
+                    <div>
+                        <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
+                    </div>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Circles: </div>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Explanation">$ Note that this should be nested in a window block</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">scope</span><span class="Argument">(<span class="String">"circle"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(x</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ The X position of your circle. Coordinate system shown above.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(y</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ The Y position of your circle. Coordinate system shown above.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(diameter</span><span class="Operator"> = <span class="Argument">100)</span> <span class="Explanation"> $ The diameter of your circle. Expands from the center of the circle.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(color</span><span class="Operator"> = <span class="Argument">{hue, brightness, gray (0/1)})</span> <span class="Explanation"> $ The color of your circle.</span>
+                    </div>
+                    <div>
+                        <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
+                    </div>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Bounding Boxes: </div>
+                <div class="Break"></div>
+
+                <div class="Explanation">Bounding boxes are used to collect input data in a certain region. </div>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Explanation">$ Note that this should be nested in a window block. Details on interactivity are covered later.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">scope</span><span class="Argument">(<span class="String">"bbox"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(x1</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ X1 Bounding box coordinate (Uses format mx &gt; X1. X1 is on the left, X2 on the right).</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(y1</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ Y1 Bounding box coordinate (Uses format my &lt; Y1.  Y1 is on top, Y2 on the bottom).</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(x2</span><span class="Operator"> = <span class="Argument">100)</span> <span class="Explanation"> $ X2 Bounding box coordinate (Uses format mx &lt; X2.  X1 is on the left, X2 on the right).</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(y2</span><span class="Operator"> = <span class="Argument">-100)</span> <span class="Explanation"> $ Y2 Bounding box coordinate (Uses format my &gt; Y2. Y1 is on top, Y2 on the bottom).</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(id</span><span class="Operator"> = <span class="Argument"><span class="String">"id"</span>)</span> <span class="Explanation"> $ A unique ID to track interaction with the bbox.</span>
+                    </div>
+                    <div>
+                        <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
+                    </div>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Buttons: </div>
+                <div class="Break"></div>
+
+                <div class="Explanation">Buttons automatically make a bbox, rectangle, and centered text. </div>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Explanation">$ Note that this should be nested in a window block. Details on interactivity are covered later.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">scope</span><span class="Argument">(<span class="String">"button"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(contents</span><span class="Operator"> = <span class="Argument"><span class="String">"button text here"</span>)</span> <span class="Explanation"> $ The contents of the button.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(x</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ The X position of the button. Coordinate system shown above.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(y</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ The Y position of the button. Coordinate system shown above.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(width</span><span class="Operator"> = <span class="Argument">100)</span> <span class="Explanation"> $ The width of the button rectangle. Width and height expand from the center.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(height</span><span class="Operator"> = <span class="Argument">30)</span> <span class="Explanation"> $ The height of the button rectangle. Width and height expand from the center.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(size</span><span class="Operator"> = <span class="Argument">1)</span> <span class="Explanation"> $ The size of the button's text. Same as the text element sizing system.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(id</span><span class="Operator"> = <span class="Argument"><span class="String">"id"</span>)</span> <span class="Explanation"> $ A unique ID to track interaction with the button.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(base_color</span><span class="Operator"> = <span class="Argument">{hue, brightness, gray (0/1)})</span> <span class="Explanation"> $ The color of the button's rectangle.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(color</span><span class="Operator"> = <span class="Argument">{hue, brightness, gray (0/1)})</span> <span class="Explanation"> $ The color of the button's text.</span>
+                    </div>
+                    <div>
+                        <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
+                    </div>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Pages: </div>
+                <div class="Break"></div>
+
+                <div class="Explanation">Pages control state and which elements are shown. A window must have at least one page to render its contents properly. </div>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Explanation">$ Note that this should be nested in a window block. Any elements go inside here.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">scope</span><span class="Argument">(<span class="String">"page"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
+                    </div>
+                    <div>
+                        <span class="Explanation">&ensp;&ensp;$ elements go here</span>
+                    </div>
+                    <div>
+                        <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
+                    </div>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Displaying Windows: </div>
+                <div class="Break"></div>
+
+                <div class="Explanation">If you've tried to run any of this code, you've probably noticed that the program finishes too early to see the window. We can fix this with a loop(0) block after the build() call. The program can still be stopped with the stop button. However, no elements in the window appear. This is due to not defining what page should be rendered. To fix this, just specify the ID of a page scope() block, as shown: </div>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">var</span><span class="Argument">(window:page<span class="Operator"> = </span> <span class="String">"page_id"</span>)</span>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">The window namespace is automatically created upon running build(). It contains information such as the current active page, the mouse X and Y information relative to the window, its position, size, and more, which is covered below. </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Interactivity:  </div>
+                <div class="Break"></div>
+
+                <div class="Explanation">Making your GUI apps interactive in Direct+ is primarily done using the root namespace, or the namespace of the first scope() block defined. For example, this is what updating the contents of a text block looks like: </div>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">var</span><span class="Argument">(root_namespace:page:page_1:text:title:contents<span class="Operator"> = </span> <span class="String">"new text!"</span>)</span>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">You'd generally update elements in the infinite loop after build(). Another aspect of interactivity is when to update elements. That's where the bounding box and button states come into play. You can get them like this: </div>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <span class="Variable">@root_namespace:bbox:id:state</span>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">This reference returns 0 if there's no action in the current bbox/button, 1 if the user is hovering over it, and 2 if the user has clicked on the element. Bounding boxes are registered globally instead of per-page, so they have shorter references.</div>
+                <div class="Break"></div>
+
+                <div class="Explanation">Any attribute of any element can be updated, as long as an expected value is given.</div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Window Namespace:  </div>
+                <div class="Break"></div>
+
+                <div class="Explanation">The window namespace includes variables about the window's information, which is useful for interactivity, such as when needing to dynamically center something. These are the variables the window namespace has: </div>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Variable">@window:x</span><span class="Explanation">&ensp;$ The X position of the window, in Scratch coordinates.</span>
+                    </div>
+                    <div>
+                        <span class="Variable">@window:y</span><span class="Explanation">&ensp;$ The Y position of the window, in Scratch coordinates.</span>
+                    </div>
+                    <div>
+                        <span class="Variable">@window:width</span><span class="Explanation">&ensp;$ The width of the window.</span>
+                    </div>
+                    <div>
+                        <span class="Variable">@window:height</span><span class="Explanation">&ensp;$ The height of the window.</span>
+                    </div>
+                    <div>
+                        <span class="Variable">@window:mx</span><span class="Explanation">&ensp;$ The mouse X position in the window. 0 is horizontal center.</span>
+                    </div>
+                    <div>
+                        <span class="Variable">@window:my</span><span class="Explanation">&ensp;$ The mouse Y position in the window. 0 is vertical center.</span>
+                    </div>
+                    <div>
+                        <span class="Variable">@window:page</span><span class="Explanation">&ensp;$ The ID of the current page being rendered. Can be changed to switch pages.</span>
+                    </div>
+                </div>
+                <div class="WideBreak"></div>
+
                 <span class="White" id="BuildingBlocks">Building Blocks</span>
                 <div class="Break"></div>
 
