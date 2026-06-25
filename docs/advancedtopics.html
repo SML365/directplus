@@ -561,7 +561,7 @@
                         <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(y2</span><span class="Operator"> = <span class="Argument">-100)</span> <span class="Explanation"> $ Y2 Bounding box coordinate (Uses format my &gt; Y2. Y1 is on top, Y2 on the bottom).</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(id</span><span class="Operator"> = <span class="Argument"><span class="String">"id"</span>)</span> <span class="Explanation"> $ A unique ID to track interaction with the bbox.</span>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(id</span><span class="Operator"> = <span class="Argument"><span class="String">"id"</span>)</span> <span class="Explanation"> $ A unique ID to track interaction with the bbox. (This is internal only and you won't ever use it)</span>
                     </div>
                     <div>
                         <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
@@ -601,7 +601,7 @@
                         <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(size</span><span class="Operator"> = <span class="Argument">1)</span> <span class="Explanation"> $ The size of the button's text. Same as the text element sizing system.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(id</span><span class="Operator"> = <span class="Argument"><span class="String">"id"</span>)</span> <span class="Explanation"> $ A unique ID to track interaction with the button.</span>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(id</span><span class="Operator"> = <span class="Argument"><span class="String">"id"</span>)</span> <span class="Explanation"> $ A unique ID to track interaction with the button. (This is internal only and you won't ever use it)</span>
                     </div>
                     <div>
                         <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(base_color</span><span class="Operator"> = <span class="Argument">{hue, brightness, gray})</span> <span class="Explanation"> $ The color of the button's rectangle.</span>
@@ -670,7 +670,7 @@
                 </div>
                 <div class="WideBreak"></div>
 
-                <div class="Explanation">This reference returns 0 if there's no action in the current bbox/button, 1 if the user is hovering over it, and 2 if the user has clicked on the element. The 'id' is the variable ID you defined, not the scope's ID parameter. Examples: @app:page:page1:button:button1:state, @app:page:homescreen:bbox:back_button:state</div>
+                <div class="Explanation">This reference returns 0 if there's no action in the current bbox/button, 1 if the user is hovering over it, and 2 if the user has clicked on the element. Examples: @app:page:page1:button:button1:state, @app:page:homescreen:bbox:back_button:state</div>
                 <div class="Break"></div>
 
                 <div class="Explanation">Any attribute of any element can be updated, as long as an expected value is given. All elements have a 'visible' variable, set to true by default, and can be changed to show or hide the element. The variable can be referenced as @path_to_element:visible.</div>
