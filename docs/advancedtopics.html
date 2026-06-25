@@ -673,7 +673,7 @@
                 <div class="Explanation">This reference returns 0 if there's no action in the current bbox/button, 1 if the user is hovering over it, and 2 if the user has clicked on the element. Examples: @app:page:page1:button:button1:state, @app:page:homescreen:bbox:back_button:state</div>
                 <div class="Break"></div>
 
-                <div class="Explanation">Any attribute of any element can be updated, as long as an expected value is given. All elements have a 'visible' variable, set to true by default, and can be changed to show or hide the element. The variable can be referenced as @path_to_element:visible.</div>
+                <div class="Explanation">Any attribute of any element can be updated, as long as an expected value is given. All elements have a 'visible' variable, set to true by default, and can be changed to show or hide the element. Bboxes and buttons are disabled when hidden. The variable can be referenced as @path_to_element:visible.</div>
                 <div class="WideBreak"></div>
 
                 <div class="Explanation">Window Namespace:  </div>
@@ -859,7 +859,67 @@
                 <div class="Break"></div>
                 <div class="Explanation">The /get_pointer function can be modified to support doubly linked lists and other structures.</div>
                 <div class="Explanation">Visit <a class="LinkExamplePrograms" href="exampleprograms.html">Example Programs</a> for a full program with linked lists.</div>
-                <div class="WideBreak"></div>  
+                <div class="WideBreak"></div> 
+                
+                <div class="Explanation">Single-Fire Buttons (Buttons that run only once, even if the mouse is held):</div>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Explanation">Reqired setup: </span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Explanation">1. </span><span class="Keyword">var</span><span class="Argument">(debounce<span class="Operator"> = </span>0)</span>
+                    </div>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Explanation">$ run this function in the infinite loop after build(), turbo() recommended</span>
+                    </div>
+                    <div>
+                        <span class="Label">/buttons</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;if</span><span class="Argument">(<span class="Variable">@debounce</span><span class="Operator"> == </span>0)</span><span class="Operator"> &lt;&lt;</span><span class="Explanation"> $ check if no button/bbox is pressed</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;&ensp;&ensp;if</span><span class="Argument">(<span class="Variable">@path_to_button_or_bbox:state</span><span class="Operator"> == </span>2)</span><span class="Operator"> &lt;&lt;</span><span class="Explanation"> $ check if a specific button/bbox is pressed</span>
+                    </div>
+                    <div>
+                        <span class="Explanation">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;$ do something</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;var</span><span class="Argument">(debounce<span class="Operator"> = </span>1)</span>
+                    </div>
+                    <div>
+                        <span class="Operator">&ensp;&ensp;&ensp;&ensp;&gt;&gt;</span>
+                    </div>
+                    <div>
+                        <span class="Explanation">&ensp;&ensp;$ add more if statements for more buttons</span>
+                    </div>
+                    <div>
+                        <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;if</span><span class="Argument">(<span class="Variable">@window:md</span><span class="Operator"> == </span><span class="Bool">false</span>)</span><span class="Operator"> &lt;&lt;</span><span class="Explanation"> $ check if mouse is not pressed</span>
+                    </div>
+                    <div>
+                        <div>
+                        <span class="Keyword">&ensp;&ensp;&ensp;&ensp;var</span><span class="Argument">(debounce<span class="Operator"> = </span>0)</span>
+                    </div>
+                    </div>
+                    <div>
+                        <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
+                    </div>
+                    <div>
+                        <span class="Label">/return</span>
+                    </div>
+                </div>
+
+                <div class="WideBreak"></div>
 
                 <div class="Explanation">Places to visit next:</div>
                 <div class="Explanation"><a class="LinkErrorGuide" href="errorguide.html">Error Guide</a></div>
