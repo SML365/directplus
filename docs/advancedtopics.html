@@ -666,14 +666,14 @@
                 <div class="Break"></div>
 
                 <div class="CodeBlock">
-                    <span class="Variable">@root_namespace:bbox:id:state</span>
+                    <span class="Variable">@full_namespace_to_path:state</span>
                 </div>
                 <div class="WideBreak"></div>
 
-                <div class="Explanation">This reference returns 0 if there's no action in the current bbox/button, 1 if the user is hovering over it, and 2 if the user has clicked on the element. The 'id' is the variable ID you defined, not the scope's ID parameter. Bounding boxes are registered globally instead of per-page, so they have shorter references. Note that buttons use the same bbox system for getting their state.</div>
+                <div class="Explanation">This reference returns 0 if there's no action in the current bbox/button, 1 if the user is hovering over it, and 2 if the user has clicked on the element. The 'id' is the variable ID you defined, not the scope's ID parameter. Examples: @app:page:page1:button:button1:state, @app:page:homescreen:bbox:back_button:state</div>
                 <div class="Break"></div>
 
-                <div class="Explanation">Any attribute of any element can be updated, as long as an expected value is given.</div>
+                <div class="Explanation">Any attribute of any element can be updated, as long as an expected value is given. All elements have a 'visible' variable, set to true by default, and can be changed to show or hide the element. The variable can be referenced as @path_to_element:visible.</div>
                 <div class="WideBreak"></div>
 
                 <div class="Explanation">Window Namespace:  </div>
@@ -700,6 +700,9 @@
                     </div>
                     <div>
                         <span class="Variable">@window:my</span><span class="Explanation">&ensp;$ The mouse Y position in the window. 0 is vertical center.</span>
+                    </div>
+                    <div>
+                        <span class="Variable">@window:my</span><span class="Explanation">&ensp;$ Returns true if the mouse is held down, false if not.</span>
                     </div>
                     <div>
                         <span class="Variable">@window:page</span><span class="Explanation">&ensp;$ The ID of the current page being rendered. Can be changed to switch pages.</span>
