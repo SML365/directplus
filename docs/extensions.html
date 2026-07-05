@@ -142,6 +142,45 @@
                     <div class="Explanation">Tokenizes the input string based on the list of character groups and the character ignore list. Example: running tokenize on ["hello123wor:ld5", {"abcdefg...xyz", "1234567890"}, ":"] will result in a output list of {"hello", "123", "world", "5"}.</div>
                     <div class="WideBreak"></div>
 
+                    <span class="White" id="Disk">Disk: </span>
+                    <div class="Break"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Keyword">use</span><span class="Argument">(__disk)</span>
+                    </div>
+                    <div class="Explanation">Imports the Disk extension, which provides a virtual disk and filesystem.</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Keyword">run</span><span class="Argument">(<span class="Label">/__disk:init</span>)</span>
+                    </div>
+                    <div class="Explanation">Initializes the root folder. This must be run before any other disk commands.</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Keyword">run</span><span class="Argument">(<span class="Label">/__disk:walk</span>[{list, of, paths}])</span>
+                    </div>
+                    <div class="Explanation">Traverses the specified list of paths in the virtual filesystem. Relative paths are not supported (paths must start with root). Ex: {root, documents, my_file}</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Keyword">run</span><span class="Argument">(<span class="Label">/__disk:new</span>[name, contents, file/folder (0/1)])</span>
+                    </div>
+                    <div class="Explanation">Creates a new file or folder in the virtual filesystem. 0 makes a folder, 1 makes a file. Note that the contents only apply to files and can be set to an empty string for folders. Each file or folder is a Direct+ variable and its name is a full path, with entries separated by forward slashes. Ex: @__disk:root\documents\my_file</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Keyword">run</span><span class="Argument">(<span class="Label">/__disk:update</span>[root\full\path, new_contents])</span>
+                    </div>
+                    <div class="Explanation">Updates an existing file or folder in the virtual filesystem. Use full paths: @__disk:root\documents\my_file</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Keyword">run</span><span class="Argument">(<span class="Label">/__disk:delete</span>[name])</span>
+                    </div>
+                    <div class="Explanation">Deletes an existing file or folder in the virtual filesystem. Uses relative paths. Ex: If you're in @__disk:root\documents, you can delete 'my_file'. Note that since Direct+ can't delete variables, only the reference to the variable is removed.</div>
+                    <div class="WideBreak"></div>
+
                     <div class="Explanation">Places to visit next:</div>
                     <div class="Explanation"><a class="LinkExamplePrograms" href="exampleprograms.html">Example Programs</a></div>
                 </div>
