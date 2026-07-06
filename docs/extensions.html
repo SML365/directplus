@@ -170,9 +170,15 @@
                     <div class="WideBreak"></div>
 
                     <div class="CodeBlock">
-                        <span class="Keyword">run</span><span class="Argument">(<span class="Label">/__disk:new</span>[name, contents, file/folder (0/1)])</span>
+                        <span class="Keyword">run</span><span class="Argument">(<span class="Label">/__disk:folder</span>[name, contents])</span>
                     </div>
-                    <div class="Explanation">Creates a new file or folder in the virtual filesystem. 0 makes a folder, 1 makes a file. Note that the contents only apply to files and can be set to an empty string for folders. Each file or folder is a Direct+ variable and its name is a full path, with entries separated by forward slashes. Ex: @__disk:root\documents\my_file, but this command uses relative paths. Ex: If you're in @__disk:root\documents, you can make 'my_file'.</div>
+                    <div class="Explanation">Creates a new folder in the virtual filesystem. Each folder is a Direct+ variable and its name is a full path, with entries separated by forward slashes. Ex: @__disk:root\documents\my_folder, but this command uses relative paths. Ex: If you're in @__disk:root\documents, you can make 'my_folder'.</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Keyword">run</span><span class="Argument">(<span class="Label">/__disk:file</span>[name, contents])</span>
+                    </div>
+                    <div class="Explanation">Creates a new file in the virtual filesystem. Each file or folder is a Direct+ variable and its name is a full path, with entries separated by forward slashes. Ex: @__disk:root\documents\my_file, but this command uses relative paths. Ex: If you're in @__disk:root\documents, you can make 'my_file'.</div>
                     <div class="WideBreak"></div>
 
                     <div class="CodeBlock">
