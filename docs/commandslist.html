@@ -301,7 +301,7 @@
                     <div class="Break"></div>
                     <span class="Operator">&gt;&gt;</span>
                 </div>
-                <div class="Explanation">Runs the code inside as fast as the interpreter can manage. Running multiple commands in turbo() typically takes as long as running one command without turbo(). Any waiting blocks (Like paste(input"..."), wait(), etc.) that rely on pausing execution or long scripts in turbo() can cause the interpreter to stall or freeze.</div>
+                <div class="Explanation">Runs the code inside without yielding control to the scheduler until the block is complete. Running multiple commands in turbo() typically takes as long as running one command without turbo(). Any waiting blocks (Like paste(input"..."), wait(), etc.) that rely on pausing execution or long scripts in turbo() can cause the interpreter to stall or freeze since nothing is updated until the block is complete.</div>
                 <div class="WideBreak"></div>
 
                 <div class="CodeBlock">
