@@ -64,6 +64,12 @@
                     <div class="Explanation">Rounds the input number to the selected decimal place. For example, [51.77, 1] returns 51.8.</div>
                     <div class="WideBreak"></div>
 
+                    <div class="CodeBlock">
+                        <span class="Keyword">run</span><span class="Argument">(<span class="Label">/__mathutils:clamp</span>[num, min, max]<span class="Arrow"> => </span>destination)</span>
+                    </div>
+                    <div class="Explanation">Clamps the input number between the specified minimum and maximum values.</div>
+                    <div class="WideBreak"></div>
+
                     <span class="White" id="ListUtils">ListUtils: </span>
                     <div class="Break"></div>
 
@@ -141,6 +147,20 @@
                     </div>
                     <div class="Explanation">Tokenizes the input string based on the list of character groups and the character ignore list. Example: running tokenize on ["hello123wor:ld5", {"abcdefg...xyz", "1234567890"}, ":"] will result in a output list of {"hello", "123", "world", "5"}.</div>
                     <div class="WideBreak"></div>
+
+                    <span class="White" id="Disk">GUIUtils: </span>
+                    <div class="Break"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Keyword">use</span><span class="Argument">(__guiutils)</span>
+                    </div>
+                    <div class="Explanation">Imports the GUIUtils extension, which provides functions for animation and GUI utilities.</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Keyword">run</span><span class="Argument">(<span class="Label">/__guiutils:ease</span>[value, target, smoothness] => destination)</span>
+                    </div>
+                    <div class="Explanation">Eases a value towards a target value based on the specified smoothness factor. The higher the smoothness, the slower the easing.</div>
 
                     <span class="White" id="Disk">Disk: </span>
                     <div class="Break"></div>
