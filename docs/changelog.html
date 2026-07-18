@@ -34,7 +34,7 @@ Added: GUI Engine, scope(), build()
 Removed: Finalized save/load/storage removal
 Fixed/Improved: Autocomplete bug, List unpacking, wait() not showing in documentation
 ————————————————–————————————————–
-6/18/2026: Added autocomplete in the text editor and depreciated persistent storage due to minimal use cases. (v3.34e)
+6/18/2026: Added autocomplete in the text editor and deprecated persistent storage due to minimal use cases. (v3.34e)
 6/15/2026: Fixed the run() system not working with labels with no parameters that have return values. (v3.33s)
 6/9/2026: Updated the interpreter so most commands no longer have to have parameters separated by a comma AND a mandatory whitespace. Now, you don't even have to include the whitespace, or you can include multiple. (v3.32e)
 6/8/2026: Fixed break() calls in turbo() blocks crashing the project. (v3.31s)
@@ -79,7 +79,7 @@ Fixed/Improved: Double variable interpolation, Indentation guides not hiding, Pa
 2/25/2026: Fixed a fatal bug where using break() outside of a loop would crash. Also fixed some other loop-related issues and massively upgraded persistent storage (also decreased slot count to 100 per directory, a much more reasonable and memory-saving amount). (v2.58s)
 2/23/2026: Fixed a glitch with double dereferencing inside of extension commands. (v2.57s)
 2/17/2026: Added the break() command. (v2.56e)
-2/16/2026: Depreciated OOP due to minimal use cases. The dynamic variable creation system and multi-file programs replace OOP and make it better. Also fixed some variable passthrough glitches from multi-file functions. (v2.55s)
+2/16/2026: Deprecated OOP due to minimal use cases. The dynamic variable creation system and multi-file programs replace OOP and make it better. Also fixed some variable passthrough glitches from multi-file functions. (v2.55s)
 2/15/2026: Added infinite looping support with loop(0). (v2.54s)
 2/9/2026: Added dynamic variable creation and dynamic variable referencing, enabling metaprogramming, linked lists, algorithms, and other cool stuff. (v2.53e)
 2/7/2026: Added variable namespacing rules and simplified object syntax, and made persistent storage larger and more persistent. (v2.52s)
@@ -168,11 +168,54 @@ Fixed/Improved: Variables, Text editor efficiency
 7/1/2025: Updated the intro and command menus. (v1.01s)
 6/30/2025: Official Release! (v1.00n)
                 </pre>
-                <h1>EXTRA STUFF</h1>
+                <h1>FEATURE STABILITY</h1>
                 <pre class="Gray">
-- Built in Scratch with 9,000+ blocks in project
-- 10-26 commands per second in Vanilla Scratch / TurboWarp (30 max due to limitations, command speed may vary by program type)
-- 1,000-9,000 commands per second in Turbo Mode (CPU-bound, expect 1,000-2,000 commands per second for most projects, any more can only be reached through specific use cases)
+Key:
+- In Development: Frequent and large breaking changes. Best not to make full programs using this feature.
+- Stable: Smaller and less frequent changes that are more stability focused. Users are encouraged to start making larger programs and sending feedback and bug reports (check the bottom of the documentation homepage for links or visit https://github.com/sml365/directplus/issues)!
+- Frozen: Almost no changes, and all changes are for stability. These features have been tested vigorously and are about as stable as software from a single dev can get.
+
+Interpreter Architecture:
+- Command dispatch: Frozen
+- Basic internal layout: Stable
+- Basic parsing system (Line-by-line): Frozen
+- Arrow Assignment parsing: Frozen
+- Namespacing: Frozen
+- Multi-file: Stable
+- Syntax table: Stable (Although inefficient, may get replaced soon)
+
+Commands (Including their internal implementations):
+- Paste: Frozen
+- Add/Sub/Mul/Div/Random/Mod/Sqrt: Frozen
+- Concat/Letter/Length/Contains/Slice: Frozen
+- Enter/Delete/Replace/Item/Numof: Frozen
+- If/Loop/Turbo/Scope: Stable
+- Run: Frozen (Multi-file run: Stable)
+- Console: Stable
+- Use: Stable
+- Wait/Hash/Type/Exists: Frozen (Hash pending depreciation)
+
+Programming Features:
+- Variables (Single and Double dereferencing): Stable
+- Comments: Frozen
+- GUI System: In Development
+
+Editor:
+- Dynamic error reports: Stable
+- Highlighting: Frozen
+- UI features: Stable
+
+Other:
+- Developer happiness: Stable
+
+Please note that I'll try to update these as often as possible, but I may forget sometimes!
+                </pre>
+                <h1>PERFORMANCE</h1>
+                <pre class="Gray">
+- Built in Scratch using 9,000+ blocks
+- 10-26 commands per second in Vanilla Scratch / TurboWarp (30 max due to Scratch frame throttling, and command speed may vary by program type).
+- 1,000-9,000 commands per second in Turbo Mode, A Scratch / TurboWarp feature that removes the 30fps limit. Note that it's CPU-bound, so expect 1,000-2,000 commands per second for most projects, and any more can only be reached through specific use cases.
+- Since turbo() prevents interpreter yielding, throughput can exceed over 10,000 commands per second, though it can't be measured accurately.
                 </pre>
             </div>
         </div>
