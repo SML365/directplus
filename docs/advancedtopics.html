@@ -378,6 +378,23 @@
                 </div>
                 <div class="WideBreak"></div>
 
+                <span class="White" id="GUI">The Global Namespace</span>
+                <div class="Break"></div>
+
+                <div class="Explanation">The global namespace is a special variable namespace that can be modified by anything, anywhere. To use it, simply prefix any variable's name with 'global:':</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(global:my_variable<span class="Operator"> = </span>5)</span>
+                    </div>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">This variable can now even be accessed by different files. Note that variables defined in scope() blocks that are also prefixed with global: have the same functionality as global: but still have the scope paths. Ex: global:cat:barley:name. Global variables defined in different files can be accessed by any file as well, useful for constants or other shared data.</div>
+
+                <div class="WideBreak"></div>
+
                 <span class="White" id="GUI">Making Graphical User Interfaces (GUIs)</span>
                 <div class="Break"></div>
 
