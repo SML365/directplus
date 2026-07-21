@@ -51,6 +51,12 @@
                 <div class="WideBreak"></div>
 
                 <div class="CodeBlock">
+                    <span class="Terminator">%</span>
+                </div>
+                <div class="Explanation"> Prevents a character from turning into a token. For example, %@ will turn into '@' without triggering a variable reference, or '%)' will turn into ')' without triggering a command end. Note that it's best to use this at one level only and not in variables you plan to reference, as their references will get scanned for escape characters that they don't have and may trigger unexpected results. Use %% to use the percent character normally.</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
                     <span class="Comment">$ comment</span>
                 </div>
                 <div class="Explanation"> Ignored by the interpreter. Useful for documenting code.</div> 
