@@ -253,7 +253,7 @@
                 </div>
                 <div class="WideBreak"></div>
 
-                <div class="Explanation">Now, the code inside will run whenever the specified variable changes value. This is useful for GUIs or other interactive projects where you want to respond to changes without extensive polling. Watches are checked after each command finishes executing. If the watched variable's value differs from its previous value, the watch executes.</div>
+                <div class="Explanation">Now, the code inside will run whenever the specified variable changes value. This is useful for GUIs or other interactive projects where you want to respond to changes without extensive polling. Watches are checked after each command finishes executing. If the watched variable's value differs from its previous value, the watch executes. Watches are non-recursive, meaning they won't trigger if the variable is changed within the watch's own code, nothing will happen.</div>
                 <div class="WideBreak"></div>
 
                 <span class="White" id="Modules">Multiple Files, Variable Sharing, and Cross-file Functions:</span>
