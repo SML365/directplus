@@ -132,7 +132,7 @@
                 <div class="Explanation">You'll notice that the output is the same, and that's because we set up the explicit counter so it works the same way as the implicit one. Try incrementing the counter by 2, decrementing, or starting at a different number, and watch the output change. You can see that this is way more flexible than the implicit version.</div>
                 <div class="WideBreak"></div>
 
-                <span class="White" id="Functions">Parameterized Functions, Namespaces, and Return Values: </span>
+                <span class="White" id="Functions">Parameterized Functions, Namespaces, Watches, and Return Values: </span>
                 <div class="Break"></div>
 
                 <div class="Explanation">Most times, when writing a function, you want to include parameters inside of that function. Those parameters can be used to provide additional functionality to that function, as well as make your code cleaner, so you don't have to rely on global variables all the time. The namespaced variables also get deleted upon function end, which is great to save program memory.</div>
@@ -235,6 +235,25 @@
                 <div class="WideBreak"></div>
 
                 <div class="Explanation">You can see that while the unparameterized version is more clear and explicit, it does have some issues that are fixed by the parameterized version. For example, the fact that the variables are not namespaced is less safe since variable names may conflict, and they're not auto-deleted.</div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Now let's take a look at watches. Watches are used to execute code whenever a specific variable changes value. You can define a watch like this:</div>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Label">/watch</span><span class="Argument">[variable_name]</span>
+                    </div>
+                    <div>
+                        <span class="Explanation">&ensp;&ensp;$ code</span>
+                    </div>
+                    <div>
+                        <span class="Label">/return</span>
+                    </div>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Now, the code inside will run whenever the specified variable changes value. This is useful for GUIs or other interactive projects where you want to respond to changes without extensive polling. Watches are checked after each command finishes executing. If the watched variable's value differs from its previous value, the watch executes.</div>
                 <div class="WideBreak"></div>
 
                 <span class="White" id="Modules">Multiple Files, Variable Sharing, and Cross-file Functions:</span>
