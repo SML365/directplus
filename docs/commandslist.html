@@ -315,13 +315,21 @@
                     <div class="Break"></div>
                     <span class="Operator">&gt;&gt;</span>
                 </div>
-                <div class="Explanation">Creates a namespaced data block where you can define variables. Other commands can be placed inside scope blocks, but only variable definitions are recommended. The second optional string acts as an additional identifier. Scope blocks can be nested. Variables in scope blocks are referenced by order of nested scope blocks: @cat:barley:food:salmon:calories. cat:barley are grouped, with 'cat' being the name and 'barley' being the ID. Then, food:salmon are grouped the same way, and 'calories' is the variable. (See <a class="LinkAdvancedTopics" href="advancedtopics.html">Advanced Topics</a> for more information)</div>
+                <div class="Explanation">Creates a namespaced data block where you can define variables. Other commands can be placed inside scope blocks, but only variable definitions are recommended. The second optional string acts as an additional identifier. Scope blocks can be nested. Variables in scope blocks are referenced by order of nested scope blocks: @cat:barley:food:salmon:calories. cat:barley are grouped, with 'cat' being the name and 'barley' being the ID. Then, food:salmon are grouped the same way, and 'calories' is the variable.</div>
                 <div class="WideBreak"></div>
 
                 <div class="CodeBlock">
-                    <span class="Keyword">build</span><span class="Argument">()</span>
+                    <span class="Keyword">gscope</span><span class="Argument">(<span class="Explanation">{str}</span>, <span class="Explanation">{str (optional)}</span>)</span><span class="Operator"> &lt;&lt;</span>
+                    <div class="Break"></div>
+                    <span class="Operator">&gt;&gt;</span>
                 </div>
-                <div class="Explanation">Builds the GUI from the defined scope tree. Must be called after all scope blocks are defined. (See <a class="LinkAdvancedTopics" href="advancedtopics.html">Advanced Topics</a> for more information)</div>
+                <div class="Explanation">Works just like a scope() block, but they're compiled by the GUI engine into an application and displayed by running ginit(). (See <a class="LinkAdvancedTopics" href="advancedtopics.html">Advanced Topics</a> for more information)</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">ginit</span><span class="Argument">()</span>
+                </div>
+                <div class="Explanation">Builds the GUI from the defined gscope tree. Must be called after all gscope blocks are defined. (See <a class="LinkAdvancedTopics" href="advancedtopics.html">Advanced Topics</a> for more information)</div>
                 <div class="WideBreak"></div>
 
                 <div class="Explanation">Places to visit next:</div>

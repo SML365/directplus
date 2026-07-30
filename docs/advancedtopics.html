@@ -420,17 +420,17 @@
                 <span class="White" id="GUI">Making Graphical User Interfaces (GUIs)</span>
                 <div class="Break"></div>
 
-                <div class="Explanation">As of v4.00, Direct+ supports making interactive Graphical User Interfaces using scope() blocks and the build() command.  These new systems allow users to program full applications in Direct+, expanding beyond the original console system. Before you explore this section, make sure you have a decent understanding of how scope() blocks work, as they won't be walked through step-by-step in this section.</div>
+                <div class="Explanation">As of v4.00, Direct+ supports making interactive Graphical User Interfaces using gscope() blocks and the ginit() command.  These new systems allow users to program full applications in Direct+, expanding beyond the original console system. Before you explore this section, make sure you have a decent understanding of how scope() or gscope() blocks work, as they won't be walked through step-by-step in this section.</div>
                 <div class="WideBreak"></div>
 
                 <div class="Explanation">Defining the Application Window: </div>
                 <div class="Break"></div>
 
-                <div class="Explanation">To build an application, you need a window container to put your app in. Making one in Direct+ can be done with a simple scope() block, as shown: </div>
+                <div class="Explanation">To build an application, you need a window container to put your app in. Making one in Direct+ can be done with a simple gscope() block, as shown: </div>
                 <div class="Break"></div>
                 <div class="CodeBlock">
                     <div>
-                        <span class="Keyword">scope</span><span class="Argument">(<span class="String">"app_name"</span>)</span><span class="Operator"> &lt;&lt;</span>
+                        <span class="Keyword">gscope</span><span class="Argument">(<span class="String">"app_name"</span>)</span><span class="Operator"> &lt;&lt;</span>
                     </div>
                     <div>
                         <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(title</span><span class="Operator"> = </span><span class="String">"my app"</span><span class="Argument">)</span> <span class="Explanation"> $ The little text on the top of the window.</span>
@@ -477,7 +477,7 @@
                 <div class="Explanation">Introduction to UI Elements: </div>
                 <div class="Break"></div>
 
-                <div class="Explanation">All UI elements in Direct+'s GUI system are made out of scope() blocks and variables. However, they have a few key differences: </div>
+                <div class="Explanation">All UI elements in Direct+'s GUI system are made out of gscope() blocks and variables. However, they have a few key differences: </div>
                 <div class="Break"></div>
                 
                 <div class="Explanation">1. All UI Elements use a different coordinate system than Scratch. {0, 0} is at the top left of the window, and moving right adds to the X position, and moving left subtracts. However, moving down subtracts from the Y position (Unlike traditional window coordinates in other programs, but consistent with Scratch coordinates) and moving up adds.</div>
@@ -492,7 +492,7 @@
                         <span class="Explanation">$ Note that this should be nested in a window block</span>
                     </div>
                     <div>
-                        <span class="Keyword">scope</span><span class="Argument">(<span class="String">"text"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
+                        <span class="Keyword">gscope</span><span class="Argument">(<span class="String">"text"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
                     </div>
                     <div>
                         <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(contents</span><span class="Operator"> = </span><span class="String">"text goes here!"</span><span class="Argument">)</span> <span class="Explanation"> $ What the text should say</span>
@@ -526,7 +526,7 @@
                         <span class="Explanation">$ Note that this should be nested in a window block</span>
                     </div>
                     <div>
-                        <span class="Keyword">scope</span><span class="Argument">(<span class="String">"rectangle"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
+                        <span class="Keyword">gscope</span><span class="Argument">(<span class="String">"rectangle"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
                     </div>
                     <div>
                         <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(x</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ The X position of your rectangle. Coordinate system shown above.</span>
@@ -560,7 +560,7 @@
                         <span class="Explanation">$ Note that this should be nested in a window block</span>
                     </div>
                     <div>
-                        <span class="Keyword">scope</span><span class="Argument">(<span class="String">"circle"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
+                        <span class="Keyword">gscope</span><span class="Argument">(<span class="String">"circle"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
                     </div>
                     <div>
                         <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(x</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ The X position of your circle. Coordinate system shown above.</span>
@@ -591,7 +591,7 @@
                         <span class="Explanation">$ Note that this should be nested in a window block. Details on interactivity are covered later.</span>
                     </div>
                     <div>
-                        <span class="Keyword">scope</span><span class="Argument">(<span class="String">"bbox"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
+                        <span class="Keyword">gscope</span><span class="Argument">(<span class="String">"bbox"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
                     </div>
                     <div>
                         <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(x1</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ X1 Bounding box coordinate (Uses format mx &gt; X1. X1 is on the left, X2 on the right).</span>
@@ -625,7 +625,7 @@
                         <span class="Explanation">$ Note that this should be nested in a window block. Details on interactivity are covered later.</span>
                     </div>
                     <div>
-                        <span class="Keyword">scope</span><span class="Argument">(<span class="String">"button"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
+                        <span class="Keyword">gscope</span><span class="Argument">(<span class="String">"button"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
                     </div>
                     <div>
                         <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(contents</span><span class="Operator"> = <span class="Argument"><span class="String">"button text here"</span>)</span> <span class="Explanation"> $ The contents of the button.</span>
@@ -674,7 +674,7 @@
                         <span class="Explanation">$ Note that this should be nested in a window block. Any elements go inside here.</span>
                     </div>
                     <div>
-                        <span class="Keyword">scope</span><span class="Argument">(<span class="String">"page"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
+                        <span class="Keyword">gscope</span><span class="Argument">(<span class="String">"page"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
                     </div>
                     <div>
                         <span class="Explanation">&ensp;&ensp;$ elements go here</span>
@@ -688,7 +688,7 @@
                 <div class="Explanation">Displaying Windows: </div>
                 <div class="Break"></div>
 
-                <div class="Explanation">If you've tried to run any of this code, you've probably noticed that the program finishes too early to see the window. We can fix this with a loop(0) block after the build() call. The program can still be stopped with the stop button. However, no elements in the window appear. This is due to not defining what page should be rendered. To fix this, just specify the ID of a page scope() block, as shown: </div>
+                <div class="Explanation">If you've tried to run any of this code, you've probably noticed that the program finishes too early to see the window. We can fix this with a loop(0) block after the ginit() call. The program can still be stopped with the stop button. However, no elements in the window appear. This is due to not defining what page should be rendered. To fix this, just specify the ID of a page scope() block, as shown: </div>
                 <div class="Break"></div>
 
                 <div class="CodeBlock">
@@ -696,13 +696,13 @@
                 </div>
                 <div class="WideBreak"></div>
 
-                <div class="Explanation">The window namespace is automatically created upon running build(). It contains information such as the current active page, the mouse X and Y information relative to the window, its position, size, and more, which is covered below. </div>
+                <div class="Explanation">The window namespace is automatically created upon running ginit(). It contains information such as the current active page, the mouse X and Y information relative to the window, its position, size, and more, which is covered below. </div>
                 <div class="WideBreak"></div>
 
                 <div class="Explanation">Interactivity:  </div>
                 <div class="Break"></div>
 
-                <div class="Explanation">Making your GUI apps interactive in Direct+ is primarily done using the root namespace, or the namespace of the first scope() block defined. For example, this is what updating the contents of a text block looks like: </div>
+                <div class="Explanation">Making your GUI apps interactive in Direct+ is primarily done using the root namespace, or the namespace of the first gscope() block defined. For example, this is what updating the contents of a text block looks like: </div>
                 <div class="Break"></div>
 
                 <div class="CodeBlock">
@@ -710,7 +710,7 @@
                 </div>
                 <div class="WideBreak"></div>
 
-                <div class="Explanation">You'd generally update elements in the infinite loop after build(). Another aspect of interactivity is when to update elements. That's where the bounding box and button states come into play. You can get them like this: </div>
+                <div class="Explanation">You'd generally update elements in the infinite loop after ginit(). Another aspect of interactivity is when to update elements. That's where the bounding box and button states come into play. You can get them like this: </div>
                 <div class="Break"></div>
 
                 <div class="CodeBlock">
@@ -925,7 +925,7 @@
 
                 <div class="CodeBlock">
                     <div>
-                        <span class="Explanation">$ run this function in the infinite loop after build(), turbo() recommended</span>
+                        <span class="Explanation">$ run this function in the infinite loop after ginit(), turbo() recommended</span>
                     </div>
                     <div>
                         <span class="Label">/buttons</span>
