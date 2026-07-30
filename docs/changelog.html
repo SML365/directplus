@@ -20,7 +20,7 @@
 
                 <pre class="Gray">
 e = experimental, s = speed/stability, n = new version
-7/29/2026: Fixed escape characters doing weird stuff in variables, and also fixed escape characters not working with lists. (v4.13s)
+7/29/2026: Fixed escape characters doing weird stuff in variables, and also fixed escape characters not working with lists. Also deprecated hash() (v4.13s)
 7/22/2026: Fixed interpreter system variables not working with watches and also fixed watch variable state changing mid-watch to something else, breaking state. (v4.12s)
 7/21/2026: Replaced %n styler with full escapement character system. Also added watches! (v4.11e)
 7/20/2026: Fixed globals in scope blocks breaking naming. Also vastly improved extensions server reliability and it should no longer return '0100' when asked for package count. (v4.10s)
@@ -197,14 +197,17 @@ Commands (Including their internal implementations):
 - Enter/Delete/Replace/Item/Numof: Frozen
 - If/Loop/Turbo/Scope: Stable
 - Run: Frozen (Multi-file run: Stable)
+- Scope/Build: Stable
 - Console: Stable
 - Use: Stable
-- Wait/Hash/Type/Exists: Frozen (Hash pending depreciation)
+- Wait/Type/Exists: Frozen
 
-Programming Features:
+Language Features:
 - Variables (Single and Double dereferencing): Stable
 - Comments: Frozen
 - GUI System: In Development
+- Run System: Stable
+- Watches: Stable
 - Cloud-based extension installation: In Development
 
 Editor:
