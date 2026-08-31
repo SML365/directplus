@@ -47,13 +47,19 @@
                 <div class="CodeBlock">
                     <span class="Terminator">;</span>
                 </div>
-                <div class="Explanation"> Terminates code, can be placed anywhere in your program, even multiple times. This is mandatory and your program can't run without it. For the termination statement to register, it should be placed as the first character in a new line of code.</div>
+                <div class="Explanation">Terminates code, can be placed anywhere in your program, even multiple times. This is mandatory and your program can't run without it. For the termination statement to register, it should be placed as the first character in a new line of code.</div>
                 <div class="WideBreak"></div>
 
                 <div class="CodeBlock">
                     <span class="Terminator">%</span>
                 </div>
-                <div class="Explanation"> Prevents a character from turning into a token. For example, %@ will turn into '@' without triggering a variable reference, or '%)' will turn into ')' without triggering a command end. Use %% to use the percent character normally, but this requires an extra whitespace to function.</div>
+                <div class="Explanation">Prevents a character from turning into a token. For example, %@ will turn into '@' without triggering a variable reference, or '%)' will turn into ')' without triggering a command end. Use %% to use the percent character normally, but this requires an extra whitespace to function.</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="String">|</span>
+                </div>
+                <div class="Explanation">Stops a reference from taking place. For example, if apple = "hello", @apple|world will dereference to "helloworld". Can be combined with double dereferencing. The | gets consumed after one dereference pass.</div>
                 <div class="WideBreak"></div>
 
                 <div class="CodeBlock">
