@@ -21,13 +21,23 @@
                 <div class="Break"></div>
 
                 <div class="CodeBlock">
-                    <span class="Keyword">var</span><span class="Argument">(name</span><span class="Operator"> = </span><span class="String">"apple"</span><span class="Argument">)</span>
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(name)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">val</span><span class="Argument">(<span class="String">"apple"</span><span class="Arrow"> => </span><span class="Argument">name)</span>
+                    </div>
                 </div>
                 <div class="Explanation">Here, a variable is being created, called "name", with a value of "apple". Now, we can use the variable's value to make a new variable. Let's try it out:</div>
                 <div class="WideBreak"></div>
 
                 <div class="CodeBlock">
-                    <span class="Keyword">var</span><span class="Argument">(</span><span class="Variable">@name</span><span class="Operator"> = </span><span class="Argument">50)</span> 
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(<span class="Variable">@name</span>)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">val</span><span class="Argument">(50<span class="Arrow"> => </span><span class="Argument"><span class="Variable">@name</span>)</span>
+                    </div>
                 </div>
                 <div class="Explanation">A variable is now made with the value of the variable created previously ("name"). So, a new variable called "apple" was just made with a value of 50.</div>
                 <div class="WideBreak"></div>
@@ -55,10 +65,16 @@
                 <div class="Break"></div>
                 <div class="CodeBlock">
                     <div>
-                        <span class="Keyword">var</span><span class="Argument">(name</span><span class="Operator"> = </span><span class="String">"apple"</span><span class="Argument">)</span>
+                        <span class="Keyword">var</span><span class="Argument">(name)</span>
                     </div>
                     <div>
-                        <span class="Keyword">var</span><span class="Argument">(</span><span class="Variable">@name</span><span class="Operator"> = </span><span class="Argument">50)</span> 
+                        <span class="Keyword">val</span><span class="Argument">(</span><span class="String">"apple"</span><span class="Arrow"> => </span><span class="Argument">name)</span> 
+                    </div>
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(<span class="Variable">@name</span>)</span> 
+                    </div>
+                    <div>
+                        <span class="Keyword">val</span><span class="Argument">(50<span class="Arrow"> => </span><span class="Argument"><span class="Variable">@name</span>)</span> 
                     </div>
                     <div class="Break"></div>
                     <div>
@@ -106,7 +122,10 @@
 
                 <div class="CodeBlock">
                     <div>
-                        <span class="Keyword">var</span><span class="Argument">(i</span><span class="Operator"> = </span><span class="Argument">0)</span>
+                        <span class="Keyword">var</span><span class="Argument">(i)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">val</span><span class="Argument">(0 <span class="Arrow">=> </span><span class="Argument">i)</span>
                     </div>
                     <div>
                         <span class="Keyword">loop</span><span class="Argument">(5)</span><span class="Operator"> <<</span>
@@ -180,7 +199,10 @@
 
                 <div class="CodeBlock">
                     <div>
-                        <span class="Keyword">var</span><span class="Argument">(text</span><span class="Operator"> = </span><span class="String">"hello, world!"</span><span class="Argument">)</span>
+                        <span class="Keyword">var</span><span class="Argument">(text)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">val</span><span class="Argument">(</span><span class="String">"hello, world!"</span><span class="Arrow"> => </span><span class="Argument">text)</span>
                     </div>
                     <div>
                         <span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/print</span><span class="Argument">)</span>
@@ -237,28 +259,6 @@
                 <div class="Explanation">You can see that while the unparameterized version is more clear and explicit, it does have some issues that are fixed by the parameterized version. For example, the fact that the variables are not namespaced is less safe since variable names may conflict, and they're not auto-deleted.</div>
                 <div class="WideBreak"></div>
 
-                <div class="Explanation">Now let's take a look at watches. Watches are used to execute code whenever a specific variable changes value. You can define a watch like this:</div>
-                <div class="Break"></div>
-
-                <div class="CodeBlock">
-                    <div>
-                        <span class="Label">/watch</span><span class="Argument">[variable_name]</span>
-                    </div>
-                    <div>
-                        <span class="Explanation">&ensp;&ensp;$ code</span>
-                    </div>
-                    <div>
-                        <span class="Label">/return</span>
-                    </div>
-                </div>
-                <div class="WideBreak"></div>
-
-                <div class="Explanation">Now, the code inside will run whenever the specified variable changes value. This is useful for responding to changes without extensive polling. Watches are checked after each command finishes executing. If the watched variable's value differs from its previous value, the watch executes. Watches are non-recursive, meaning they won't trigger if the variable is changed within the watch's own code, nothing will happen. Watches are also not asynchronous, so if a variable changes, the interpreter will stop whatever it's doing to execute that watch. Note that watches are intended for larger state changes, not for something like observing button states, since they quickly change and may not get picked up by that watch.</div>
-                <div class="WideBreak"></div>
-
-                <div class="Explanation">Note that it is best practice to use the automatically created (and automatically deleted) watch:variable_name variable, to use the exact snapshot of the tracked variable in your operations. That way, state won't corrupt if the real variable changes while the watch is executing. For example, /watch:x would make a variable referenced as @watch:x.</div>
-                <div class="WideBreak"></div>
-
                 <span class="White" id="Modules">Multiple Files, Variable Sharing, and Cross-file Functions:</span>
                 <div class="Break"></div>
 
@@ -273,7 +273,7 @@
                         <span class="Gray">main</span>
                         <div class="Break"></div>
                     </div>
-                    <span class="Keyword">use</span><span class="Argument">(filename here)</span>
+                    <span class="Keyword">use</span><span class="Argument">(filename_here)</span>
                 </div>
                 <div class="WideBreak"></div>
 
@@ -313,13 +313,13 @@
                         <span class="Keyword">use</span><span class="Argument">(utils)</span>
                     </div>
                     <div>
-                        <span class="Keyword">var</span><span class="Argument">(result)</span>
+                        <span class="Keyword">var</span><span class="Argument">(output)</span>
                     </div>
                     <div>
-                        <span class="Keyword">run</span><span class="Argument">(<span class="Label">/utils:mul_by_2</span>[5]<span class="Arrow"> => </span>result)</span>
+                        <span class="Keyword">run</span><span class="Argument">(<span class="Label">/utils:mul_by_2</span>[5]<span class="Arrow"> => </span>output)</span>
                     </div>
                     <div>
-                        <span class="Keyword">paste</span><span class="Argument">(text<span class="String">"<span class="Variable">@result</span>"</span>)</span>
+                        <span class="Keyword">paste</span><span class="Argument">(text<span class="String">"<span class="Variable">@output</span>"</span>)</span>
                     </div>
                     <div>
                         <span class="Terminator">;</span>
@@ -373,16 +373,19 @@
 
                 <div class="CodeBlock">
                     <div>
-                        <span class="Keyword">var</span><span class="Argument">(num1<span class="Operator"> = </span>5)</span>
+                        <span class="Keyword">var</span><span class="Argument">({num1, num2, list1, list2})</span>
                     </div>
                     <div>
-                        <span class="Keyword">var</span><span class="Argument">(num2<span class="Operator"> = </span>10)</span>
+                        <span class="Keyword">val</span><span class="Argument">(5<span class="Arrow"> => </span> num1)</span>
                     </div>
                     <div>
-                        <span class="Keyword">var</span><span class="Argument">(list1<span class="Operator"> = </span>[5, 10, 15])</span>
+                        <span class="Keyword">val</span><span class="Argument">(10<span class="Arrow"> => </span> num2)</span>
                     </div>
                     <div>
-                        <span class="Keyword">var</span><span class="Argument">(list2<span class="Operator"> = </span>[2, 4, 6])</span>
+                        <span class="Keyword">val</span><span class="Argument">({5, 10, 15}<span class="Arrow"> => </span> list1)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">val</span><span class="Argument">({2, 4, 6}<span class="Arrow"> => </span> list2)</span>
                     </div>
                     <div class="Break"></div>
                     <div>
@@ -408,7 +411,7 @@
 
                 <div class="CodeBlock">
                     <div>
-                        <span class="Keyword">var</span><span class="Argument">(global:my_variable<span class="Operator"> = </span>5)</span>
+                        <span class="Keyword">var</span><span class="Argument">(global:my_variable)</span>
                     </div>
                 </div>
                 <div class="WideBreak"></div>
@@ -433,37 +436,40 @@
                         <span class="Keyword">gscope</span><span class="Argument">(<span class="String">"app_name"</span>)</span><span class="Operator"> &lt;&lt;</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(title</span><span class="Operator"> = </span><span class="String">"my app"</span><span class="Argument">)</span> <span class="Explanation"> $ The little text on the top of the window.</span>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">({title, x, y, width, height, base_color, titlebar_color, outline_color, roundness, draggable, resizable})</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(x</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ The starting X position of your app window, Scratch-style coordinates are used. (center = {0, 0})</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(<span class="String">"my app"</span><span class="Arrow"> => </span><span class="Argument">title)</span> <span class="Explanation"> $ The little text on the top of the window.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(y</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ The starting Y position of your app window, Scratch-style coordinates are used.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span><span class="Argument">x)</span> <span class="Explanation"> $ The starting X position of your app window, Scratch-style coordinates are used. (center = {0, 0})</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(width</span><span class="Operator"> = <span class="Argument">300)</span> <span class="Explanation"> $ The starting (and minimum) width of your app window.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span><span class="Argument">y)</span> <span class="Explanation"> $ The starting Y position of your app window, Scratch-style coordinates are used.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(height</span><span class="Operator"> = <span class="Argument">300)</span> <span class="Explanation"> $ The starting (and minimum) height of your app window.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(300<span class="Arrow"> => </span><span class="Argument">width)</span> <span class="Explanation"> $ The starting (and minimum) width of your app window.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(base_color</span><span class="Operator"> = <span class="Argument">{hue (0-200), brightness (0-100), gray (0/1)})</span> <span class="Explanation"> $ The color of the window base (where all your UI elements live). Gray is either 0/1 and toggles hue vs. grayscale mode. This color system is used throughout the engine. Note that failing to include all the color parameters to any UI element will result in an <a class="LinkErrorGuide" href="errorguide.html" target="_blank">invalid token</a> error. </span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(300<span class="Arrow"> => </span><span class="Argument">height)</span> <span class="Explanation"> $ The starting (and minimum) height of your app window.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(titlebar_color</span><span class="Operator"> = <span class="Argument">{hue, brightness, gray})</span> <span class="Explanation"> $ The color of the window titlebar.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">({hue (0-200), brightness (0-100), gray (0/1)}<span class="Arrow"> => </span><span class="Argument">base_color)</span> <span class="Explanation"> $ The color of the window base (where all your UI elements live). Gray is either 0/1 and toggles hue vs. grayscale mode. This color system is used throughout the engine. Note that failing to include all the color parameters to any UI element will result in an <a class="LinkErrorGuide" href="errorguide.html" target="_blank">invalid token</a> error. </span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(outline_color</span><span class="Operator"> = <span class="Argument">{hue, brightness, gray})</span> <span class="Explanation"> $ The color of the window border.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">({hue, brightness, gray}<span class="Arrow"> => </span><span class="Argument">titlebar_color)</span> <span class="Explanation"> $ The color of the window titlebar.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(roundness</span><span class="Operator"> = <span class="Argument">10)</span> <span class="Explanation"> $ The roundness of the button's corners. Use a roundness greater than 2 for actual rounded corners. Anything lower is ignored.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">({hue, brightness, gray}<span class="Arrow"> => </span><span class="Argument">outline_color)</span> <span class="Explanation"> $ The color of the window border.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(draggable</span><span class="Operator"> = <span class="Bool">true/false)</span> <span class="Explanation"> $ Can your window be moved around?</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(10<span class="Arrow"> => </span><span class="Argument">roundness)</span> <span class="Explanation"> $ The roundness of the button's corners. Use a roundness greater than 2 for actual rounded corners. Anything lower is ignored.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(resizable</span><span class="Operator"> = <span class="Bool">true/false)</span> <span class="Explanation"> $ Can your window be resized?</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(<span class="Bool">true/false</span><span class="Arrow"> => </span><span class="Argument">draggable)</span> <span class="Explanation"> $ Can your window be moved around?</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(<span class="Bool">true/false</span><span class="Arrow"> => </span><span class="Argument">resizable)</span> <span class="Explanation"> $ Can your window be resized?</span>
                     </div>
                     <div>
                         <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
@@ -492,22 +498,25 @@
                         <span class="Keyword">gscope</span><span class="Argument">(<span class="String">"text"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(contents</span><span class="Operator"> = </span><span class="String">"text goes here!"</span><span class="Argument">)</span> <span class="Explanation"> $ What the text should say</span>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">({contents, x, y, size, color, align})</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(x</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ The X position of your text element. Coordinate system shown above.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(<span class="String">"text goes here!"</span><span class="Arrow"> => </span><span class="Argument">contents)</span> <span class="Explanation"> $ What the text should say</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(y</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ The Y position of your text element. Coordinate system shown above.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span><span class="Argument">x)</span> <span class="Explanation"> $ The X position of your text element. Coordinate system shown above.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(size</span><span class="Operator"> = <span class="Argument">1)</span> <span class="Explanation"> $ The scale of your text. 1 = default size. </span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span><span class="Argument">y)</span> <span class="Explanation"> $ The Y position of your text element. Coordinate system shown above.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(color</span><span class="Operator"> = <span class="Argument">{hue, brightness, gray})</span> <span class="Explanation"> $ The color of your text.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(1<span class="Arrow"> => </span><span class="Argument">size)</span> <span class="Explanation"> $ The scale of your text. 1 = default size. </span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(align</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ Alignment of your text. 0 = left, 1 = right, 0.5 = center. Accepts any float between 0 and 1.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">({hue, brightness, gray}<span class="Arrow"> => </span><span class="Argument">color)</span> <span class="Explanation"> $ The color of your text.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span><span class="Argument">align)</span> <span class="Explanation"> $ Alignment of your text. 0 = left, 1 = right, 0.5 = center. Accepts any float between 0 and 1.</span>
                     </div>
                     <div>
                         <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
@@ -526,22 +535,25 @@
                         <span class="Keyword">gscope</span><span class="Argument">(<span class="String">"rectangle"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(x</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ The X position of your rectangle. Coordinate system shown above.</span>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">({x, y, width, height, color, roundness})</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(y</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ The Y position of your rectangle. Coordinate system shown above.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span><span class="Argument">x)</span> <span class="Explanation"> $ The X position of your rectangle. Coordinate system shown above.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(width</span><span class="Operator"> = <span class="Argument">100)</span> <span class="Explanation"> $ The width of your rectangle. Width/height expand from center of the rectangle.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span><span class="Argument">y)</span> <span class="Explanation"> $ The Y position of your rectangle. Coordinate system shown above.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(height</span><span class="Operator"> = <span class="Argument">100)</span> <span class="Explanation"> $ The height of your rectangle.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(100<span class="Arrow"> => </span><span class="Argument">width)</span> <span class="Explanation"> $ The width of your rectangle. Width/height expand from center of the rectangle.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(color</span><span class="Operator"> = <span class="Argument">{hue, brightness, gray})</span> <span class="Explanation"> $ The color of your rectangle.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(100<span class="Arrow"> => </span><span class="Argument">height)</span> <span class="Explanation"> $ The height of your rectangle.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(roundness</span><span class="Operator"> = <span class="Argument">10)</span> <span class="Explanation"> $ The roundness of the button's corners. Use a roundness greater than 2 for actual rounded corners. Anything lower is ignored.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">({hue, brightness, gray}<span class="Arrow"> => </span><span class="Argument">color)</span> <span class="Explanation"> $ The color of your rectangle.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(10<span class="Arrow"> => </span><span class="Argument">roundness)</span> <span class="Explanation"> $ The roundness of the button's corners. Use a roundness greater than 2 for actual rounded corners. Anything lower is ignored.</span>
                     </div>
                     <div>
                         <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
@@ -560,16 +572,19 @@
                         <span class="Keyword">gscope</span><span class="Argument">(<span class="String">"circle"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(x</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ The X position of your circle. Coordinate system shown above.</span>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">({x, y, diameter, color})</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(y</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ The Y position of your circle. Coordinate system shown above.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span><span class="Argument">x)</span> <span class="Explanation"> $ The X position of your circle. Coordinate system shown above.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(diameter</span><span class="Operator"> = <span class="Argument">100)</span> <span class="Explanation"> $ The diameter of your circle. Expands from the center of the circle.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span><span class="Argument">y)</span> <span class="Explanation"> $ The Y position of your circle. Coordinate system shown above.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(color</span><span class="Operator"> = <span class="Argument">{hue, brightness, gray})</span> <span class="Explanation"> $ The color of your circle.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(100<span class="Arrow"> => </span><span class="Argument">diameter)</span> <span class="Explanation"> $ The diameter of your circle. Expands from the center of the circle.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">({hue, brightness, gray}<span class="Arrow"> => </span><span class="Argument">color)</span> <span class="Explanation"> $ The color of your circle.</span>
                     </div>
                     <div>
                         <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
@@ -591,16 +606,19 @@
                         <span class="Keyword">gscope</span><span class="Argument">(<span class="String">"bbox"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(x1</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ X1 Bounding box coordinate (Uses format mx &gt; X1. X1 is on the left, X2 on the right).</span>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">({x1, y1, x2, y2})</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(y1</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ Y1 Bounding box coordinate (Uses format my &lt; Y1.  Y1 is on top, Y2 on the bottom).</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span><span class="Argument">x1)</span> <span class="Explanation"> $ X1 Bounding box coordinate (Uses format mx &gt; X1. X1 is on the left, X2 on the right).</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(x2</span><span class="Operator"> = <span class="Argument">100)</span> <span class="Explanation"> $ X2 Bounding box coordinate (Uses format mx &lt; X2.  X1 is on the left, X2 on the right).</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span><span class="Argument">y1)</span> <span class="Explanation"> $ Y1 Bounding box coordinate (Uses format my &lt; Y1.  Y1 is on top, Y2 on the bottom).</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(y2</span><span class="Operator"> = <span class="Argument">-100)</span> <span class="Explanation"> $ Y2 Bounding box coordinate (Uses format my &gt; Y2. Y1 is on top, Y2 on the bottom).</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(100<span class="Arrow"> => </span><span class="Argument">x2)</span> <span class="Explanation"> $ X2 Bounding box coordinate (Uses format mx &lt; X2.  X1 is on the left, X2 on the right).</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(-100<span class="Arrow"> => </span><span class="Argument">y2)</span> <span class="Explanation"> $ Y2 Bounding box coordinate (Uses format my &gt; Y2. Y1 is on top, Y2 on the bottom).</span>
                     </div>
                     <div>
                         <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
@@ -622,31 +640,34 @@
                         <span class="Keyword">gscope</span><span class="Argument">(<span class="String">"button"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(contents</span><span class="Operator"> = <span class="Argument"><span class="String">"button text here"</span>)</span> <span class="Explanation"> $ The contents of the button.</span>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">({contents, x, y, width, height, size, base_color, color, roundness})</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(x</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ The X position of the button. Coordinate system shown above.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(<span class="String">"button text here"</span><span class="Arrow"> => </span><span class="Argument">contents)</span> <span class="Explanation"> $ The contents of the button.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(y</span><span class="Operator"> = <span class="Argument">0)</span> <span class="Explanation"> $ The Y position of the button. Coordinate system shown above.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span><span class="Argument">x)</span> <span class="Explanation"> $ The X position of the button. Coordinate system shown above.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(width</span><span class="Operator"> = <span class="Argument">100)</span> <span class="Explanation"> $ The width of the button rectangle. Width and height expand from the center.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span><span class="Argument">y)</span> <span class="Explanation"> $ The Y position of the button. Coordinate system shown above.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(height</span><span class="Operator"> = <span class="Argument">30)</span> <span class="Explanation"> $ The height of the button rectangle. Width and height expand from the center.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(100<span class="Arrow"> => </span><span class="Argument">width)</span> <span class="Explanation"> $ The width of the button rectangle. Width and height expand from the center.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(size</span><span class="Operator"> = <span class="Argument">1)</span> <span class="Explanation"> $ The size of the button's text. Same as the text element sizing system.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(30<span class="Arrow"> => </span><span class="Argument">height)</span> <span class="Explanation"> $ The height of the button rectangle. Width and height expand from the center.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(base_color</span><span class="Operator"> = <span class="Argument">{hue, brightness, gray})</span> <span class="Explanation"> $ The color of the button's rectangle.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(1<span class="Arrow"> => </span><span class="Argument">size)</span> <span class="Explanation"> $ The size of the button's text. Same as the text element sizing system.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(color</span><span class="Operator"> = <span class="Argument">{hue, brightness, gray})</span> <span class="Explanation"> $ The color of the button's text.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">({hue, brightness, gray}<span class="Arrow"> => </span><span class="Argument">base_color)</span> <span class="Explanation"> $ The color of the button's rectangle.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(roundness</span><span class="Operator"> = <span class="Argument">10)</span> <span class="Explanation"> $ The roundness of the button's corners. Use a roundness greater than 2 for actual rounded corners. Anything lower is ignored.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">({hue, brightness, gray}<span class="Arrow"> => </span><span class="Argument">color)</span> <span class="Explanation"> $ The color of the button's text.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(10<span class="Arrow"> => </span><span class="Argument">roundness)</span> <span class="Explanation"> $ The roundness of the button's corners. Use a roundness greater than 2 for actual rounded corners. Anything lower is ignored.</span>
                     </div>
                     <div>
                         <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
@@ -683,7 +704,12 @@
                 <div class="Break"></div>
 
                 <div class="CodeBlock">
-                    <span class="Keyword">var</span><span class="Argument">(window:page<span class="Operator"> = </span> <span class="String">"page_id"</span>)</span>
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(window:page)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">val</span><span class="Argument">(<span class="String">"page_id"</span><span class="Arrow"> => </span>window:page)</span>
+                    </div>
                 </div>
                 <div class="WideBreak"></div>
 
@@ -697,7 +723,7 @@
                 <div class="Break"></div>
 
                 <div class="CodeBlock">
-                    <span class="Keyword">var</span><span class="Argument">(root_namespace:page:page_1:text:title:contents<span class="Operator"> = </span> <span class="String">"new text!"</span>)</span>
+                    <span class="Keyword">val</span><span class="Argument">(<span class="String">"new text!"</span><span class="Arrow"> => </span>root_namespace:page:page_1:text:title:contents)</span>
                 </div>
                 <div class="WideBreak"></div>
 
@@ -752,7 +778,7 @@
                 <span class="White" id="BuildingBlocks">Building Blocks</span>
                 <div class="Break"></div>
 
-                <div class="Explanation">Here are just some Direct+ Primitives that can be easily added to your programs so you don't have to think much about how to make a while loop or linked list.</div>
+                <div class="Explanation">Here are just some Direct+ Primitives that can be easily added to your programs so you don't have to think much about how to make a while loop elif statement.</div>
                 <div class="WideBreak"></div>
 
                 <div class="Explanation">While Loop:</div>
@@ -810,106 +836,20 @@
                 </div>
                 
                 <div class="WideBreak"></div> 
-
-                <div class="Explanation">Linked List:</div>
-                <div class="Break"></div>
-                
-                <div class="CodeBlock">
-                    <div class="Explanation">Required Setup: </div>
-                    <div class="Break"></div>
-                    <div>
-                        <span class="Explanation">1. </span><span class="Keyword">var</span><span class="Argument">(temp)</span><span class="Explanation"> $ a temporary variable to hold pointers in /get_pointer</span>
-                    </div>
-                    <div class="Break"></div>
-                    <div>
-                        <span class="Explanation">2. </span><span class="Keyword">var</span><span class="Argument">(pointer)</span><span class="Explanation"> $ a variable to hold the result of /get_pointer</span>
-                    </div>
-                    <div class="Break"></div>
-                    <div>
-                        <span class="Explanation">3. </span><span class="Keyword">var</span><span class="Argument">(current_node</span><span class="Operator"> = </span><span class="Argument">0)</span><span class="Explanation"> $ the current node in the linked list</span>
-                    </div>
-                    <div class="Break"></div>
-                    <div>
-                        <span class="Explanation">4. </span><span class="Label">/get_pointer<span class="Argument">[node]</span></span><span class="Explanation"> $ returns the pointer to the next node</span>
-                    </div>
-                    <span class="Keyword">&ensp;&ensp;&ensp;&ensp;&ensp;item</span><span class="Argument">(<span class="Variable">@get_pointer:node</span>, 2 <span class="Arrow"> =></span> temp)</span>
-                    <div>
-                        <span class="Label">&ensp;&ensp;&ensp;&ensp;&ensp;/return</span><span class="Argument">[<span class="Variable">@temp</span>]</span>
-                    </div>
-                    <div class="Break"></div>
-                    <div>
-                        <span class="Explanation">define variables at the top of your program</span>
-                    </div>
-                    <div>
-                        <span class="Explanation">add the /get_pointer function to the end of your main program after <span class="Terminator">;</span></span>
-                    </div>
-                </div>
-                <div class="WideBreak"></div>
-
-                <div class="CodeBlock">
-                    <div>
-                        <span class="Explanation">$ define linked list</span>
-                    </div>
-                    <div>
-                        <span class="Keyword">var</span><span class="Argument">(head <span class="Operator">=</span> <span class="String">"node1"</span>)</span><span class="Explanation"> $ pointer to the start of the linked list</span>
-                    </div>
-                    <div>
-                        <span class="Keyword">var</span><span class="Argument">(node1 <span class="Operator">=</span> {<span class="String">"apple"</span>, <span class="String">"node2"</span>})</span><span class="Explanation"> $ first node with a value of "apple" points to node2</span>
-                    </div>
-                    <div>
-                        <span class="Keyword">var</span><span class="Argument">(node2 <span class="Operator">=</span> {<span class="String">"banana"</span>, <span class="String">"node3"</span>})</span><span class="Explanation"> $ second node with a value of "banana" points to node3</span>
-                    </div>
-                    <div>
-                        <span class="Keyword">var</span><span class="Argument">(node3 <span class="Operator">=</span> {<span class="String">"cherry"</span>, <span class="String">"node4"</span>})</span><span class="Explanation"> $ third node with a value of "cherry" points to node4</span>
-                    </div>
-                    <div>
-                        <span class="Explanation">etc.</span>
-                    </div>
-                </div>
-                <div class="WideBreak"></div>
-
-                <div class="CodeBlock">
-                    <div>
-                        <span class="Explanation">$ traverse linked list</span>
-                    </div>
-                    <div>
-                        <span class="Keyword">var</span><span class="Argument">(current_node <span class="Operator">=</span> <span class="Variable">@head</span>)</span> <span class="Explanation"> $ sets the current node to @head ("node1")</span>
-                    </div>
-                    <div>
-                        <span class="Keyword">item</span><span class="Argument">(<span class="Double">@@current_node</span>, 1 <span class="Arrow"> =></span> dest)</span><span class="Explanation"> $ gets value of the current node</span>
-                    </div>
-                    <div>
-                        <span class="Keyword">run</span><span class="Argument">(<span class="Label">/get_pointer</span>[<span class="Double">@@current_node</span>]<span class="Arrow"> => </span>pointer)</span><span class="Explanation"> $ gets the pointer to the next node</span>
-                    </div>
-                    <div>
-                        <span class="Keyword">var</span><span class="Argument">(current_node <span class="Operator">=</span> <span class="Variable">@pointer</span>)</span> <span class="Explanation"> $ sets the next node to the pointer obtained from /get_pointer</span>
-                    </div>
-                    <div>
-                        <span class="Explanation">etc.</span>
-                    </div>
-                </div>
-                <div class="WideBreak"></div>
-
-                <div class="Explanation">Linked list "shapes": </div>
-                <div class="Explanation">1. Linear linked list: each node points to the next node, and the last node points to null.</div>
-                <div class="Explanation">2. Circular linked list: each node points to the next node, and the last node points to the first node.</div>
-                <div class="Explanation">3. Doubly linked list: each node points to both the previous and next nodes.</div>
-
-                <div class="Break"></div>
-                <div class="Explanation">The /get_pointer function can be modified to support doubly linked lists and other structures.</div>
-                <div class="Explanation">Visit <a class="LinkExamplePrograms" href="exampleprograms.html">Example Programs</a> for a full program with linked lists.</div>
-                <div class="WideBreak"></div> 
                 
                 <div class="Explanation">Single-Fire Buttons (Buttons that run only once, even if the mouse is held):</div>
                 <div class="Break"></div>
 
                 <div class="CodeBlock">
                     <div>
-                        <span class="Explanation">Reqired setup: </span>
+                        <span class="Explanation">Required setup: </span>
                     </div>
                     <div class="Break"></div>
                     <div>
-                        <span class="Explanation">1. </span><span class="Keyword">var</span><span class="Argument">(debounce<span class="Operator"> = </span>0)</span>
+                        <span class="Explanation">1. </span><span class="Keyword">var</span><span class="Argument">(debounce)</span>
+                    </div>
+                    <div>
+                        <span class="Explanation">&ensp;&ensp;&ensp;</span><span class="Keyword">val</span><span class="Argument">(0<span class="Arrow"> => </span>debounce)</span>
                     </div>
                 </div>
                 <div class="WideBreak"></div>
@@ -931,7 +871,7 @@
                         <span class="Explanation">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;$ do something</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;var</span><span class="Argument">(debounce<span class="Operator"> = </span>1)</span>
+                        <span class="Keyword">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;val</span><span class="Argument">(1 <span class="Arrow">=></span> debounce)</span>
                     </div>
                     <div>
                         <span class="Operator">&ensp;&ensp;&ensp;&ensp;&gt;&gt;</span>
@@ -947,7 +887,7 @@
                     </div>
                     <div>
                         <div>
-                        <span class="Keyword">&ensp;&ensp;&ensp;&ensp;var</span><span class="Argument">(debounce<span class="Operator"> = </span>0)</span>
+                        <span class="Keyword">&ensp;&ensp;&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span>debounce)</span>
                     </div>
                     </div>
                     <div>

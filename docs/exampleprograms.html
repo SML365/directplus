@@ -24,16 +24,7 @@
                             <span class="Explanation">$ define variables</span>
                         </div>
                         <div>
-                            <span class="Keyword">var</span><span class="Argument">(num1</span><span class="Argument">)</span>
-                        </div>
-                        <div>
-                            <span class="Keyword">var</span><span class="Argument">(num2</span><span class="Argument">)</span>
-                        </div>
-                        <div>
-                            <span class="Keyword">var</span><span class="Argument">(operator</span><span class="Argument">)</span>
-                        </div>
-                        <div>
-                            <span class="Keyword">var</span><span class="Argument">(result</span><span class="Argument">)</span>
+                            <span class="Keyword">var</span><span class="Argument">({num1, num2, operator, result})</span>
                         </div>
                         <div class="Break"></div>
                         <div>
@@ -118,13 +109,13 @@
                             <span class="Explanation">$ define variables</span>
                         </div>
                         <div>
-                            <span class="Keyword">var</span><span class="Argument">(num1<span class="Operator"> = </span>0)</span>
+                            <span class="Keyword">var</span><span class="Argument">({num1, num2, temp})</span>
                         </div>
                         <div>
-                            <span class="Keyword">var</span><span class="Argument">(num2<span class="Operator"> = </span>1)</span>
+                            <span class="Keyword">val</span><span class="Argument">(0<span class="Arrow"> => </span>num1)</span>
                         </div>
                         <div>
-                            <span class="Keyword">var</span><span class="Argument">(temp</span><span class="Argument">)</span>
+                            <span class="Keyword">val</span><span class="Argument">(1<span class="Arrow"> => </span>num2)</span>
                         </div>
                         <div class="Break"></div>
                         <div>
@@ -140,10 +131,10 @@
                             <span class="Keyword">&ensp;&ensp;add</span><span class="Argument">(<span class="Variable">@num1</span>, <span class="Variable">@num2</span><span class="Arrow"> => </span>temp)</span>
                         </div>
                         <div>
-                            <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(num1<span class="Operator"> = </span><span class="Variable">@num2</span>)</span>
+                            <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(<span class="Variable">@num2</span><span class="Arrow"> => </span>num1)</span>
                         </div>
                         <div>
-                            <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(num2<span class="Operator"> = </span><span class="Variable">@temp</span>)</span>
+                            <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(<span class="Variable">@temp</span><span class="Arrow"> => </span>num2)</span>
                         </div>
                         <div>
                             <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
@@ -163,10 +154,7 @@
                             <span class="Explanation">$ define variables</span>
                         </div>
                         <div>
-                            <span class="Keyword">var</span><span class="Argument">(temp1</span><span class="Argument">)</span>
-                        </div>
-                        <div>
-                            <span class="Keyword">var</span><span class="Argument">(temp2</span><span class="Argument">)</span>
+                            <span class="Keyword">var</span><span class="Argument">({temp1, temp2})</span>
                         </div>
                         <div class="Break"></div>
                         <div>
@@ -247,19 +235,7 @@
                             <span class="Explanation">$ define variables</span>
                         </div>
                         <div>
-                            <span class="Keyword">var</span><span class="Argument">(input</span><span class="Argument">)</span>
-                        </div>
-                        <div>
-                            <span class="Keyword">var</span><span class="Argument">(length</span><span class="Argument">)</span>
-                        </div>
-                        <div>
-                            <span class="Keyword">var</span><span class="Argument">(reversed</span><span class="Argument">)</span>
-                        </div>
-                        <div>
-                            <span class="Keyword">var</span><span class="Argument">(letter</span><span class="Argument">)</span>
-                        </div>
-                        <div>
-                            <span class="Keyword">var</span><span class="Argument">(index</span><span class="Argument">)</span>
+                            <span class="Keyword">var</span><span class="Argument">({input, length, reversed, letter, index})</span>
                         </div>
                         <div class="Break"></div>
                         <div>
@@ -273,7 +249,10 @@
                             <span class="Keyword">length</span><span class="Argument">(<span class="Variable">@input</span><span class="Arrow"> => </span>length)</span>
                         </div>
                         <div>
-                            <span class="Keyword">var</span><span class="Argument">(index<span class="Operator"> = </span><span class="Variable">@length</span>)</span>
+                            <span class="Keyword">var</span><span class="Argument">(index)</span>
+                        </div>
+                        <div>
+                            <span class="Keyword">val</span><span class="Argument">(<span class="Variable">@length</span><span class="Arrow"> => </span>index)</span>
                         </div>
                         <div class="Break"></div>
                         <div>
@@ -313,19 +292,7 @@
                         <span class="Explanation">$ define variables</span>
                     </div>
                     <div>
-                        <span class="Keyword">var</span><span class="Argument">(head)</span>
-                    </div>
-                    <div>
-                        <span class="Keyword">var</span><span class="Argument">(current_node)</span>
-                    </div>
-                    <div>
-                        <span class="Keyword">var</span><span class="Argument">(node_value)</span>
-                    </div>
-                    <div>
-                        <span class="Keyword">var</span><span class="Argument">(node_pointer)</span>
-                    </div>
-                    <div>
-                        <span class="Keyword">var</span><span class="Argument">(temp)</span>
+                        <span class="Keyword">var</span><span class="Argument">({head, current_node, node_value, node_pointer, temp})</span>
                     </div>
                     <div class="Break"></div>
 
@@ -333,22 +300,37 @@
                         <span class="Explanation">$ define linked list</span>
                     </div>
                     <div>
-                        <span class="Keyword">var</span><span class="Argument">(head <span class="Operator">=</span> <span class="String">"node1"</span>)</span>
+                        <span class="Keyword">var</span><span class="Argument">(head)</span>
                     </div>
                     <div>
-                        <span class="Keyword">var</span><span class="Argument">(node1 <span class="Operator">=</span> {<span class="String">"apple"</span>, <span class="String">"node2"</span>})</span>
+                        <span class="Keyword">val</span><span class="Argument">(<span class="String">"node1"</span><span class="Arrow"> => </span>head)</span>
                     </div>
                     <div>
-                        <span class="Keyword">var</span><span class="Argument">(node2 <span class="Operator">=</span> {<span class="String">"banana"</span>, <span class="String">"node3"</span>})</span>
+                        <span class="Keyword">var</span><span class="Argument">(node1)</span>
                     </div>
                     <div>
-                        <span class="Keyword">var</span><span class="Argument">(node3 <span class="Operator">=</span> {<span class="String">"cherry"</span>, <span class="String">"null"</span>})</span>
+                        <span class="Keyword">val</span><span class="Argument">({<span class="String">"apple"</span>, <span class="String">"node2"</span>}<span class="Arrow"> => </span>node1)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(node2)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">val</span><span class="Argument">({<span class="String">"banana"</span>, <span class="String">"node3"</span>}<span class="Arrow"> => </span>node2)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(node3)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">val</span><span class="Argument">({<span class="String">"cherry"</span>, <span class="String">"null"</span>}<span class="Arrow"> => </span>node3)</span>
                     </div>
                     <div class="Break"></div>
 
                     <div class="Explanation">$ traverse through list and print each item</div>
                     <div>
-                        <span class="Keyword">var</span><span class="Argument">(current_node <span class="Operator">=</span> <span class="Variable">@head</span>)</span>
+                        <span class="Keyword">var</span><span class="Argument">(current_node)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">val</span><span class="Argument">(<span class="Variable">@head</span><span class="Arrow"> => </span>current_node)</span>
                     </div>
 
                     <div>
@@ -377,7 +359,7 @@
                     <div class="Break"></div>
 
                     <div>
-                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(current_node <span class="Operator">=</span> <span class="Variable">@node_pointer</span>)</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(<span class="Variable">@node_pointer</span><span class="Arrow"> => </span>current_node)</span>
                     </div>
                     <div>
                         <span class="Operator">&ensp;&ensp;&gt;&gt;</span>

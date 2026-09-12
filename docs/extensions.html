@@ -14,7 +14,7 @@
                     <h1>EXTENSIONS</h1>
 
                     <span class="Explanation">Implementation Details: All Direct+ extensions are implemented in the language itself and can be used just like any other module.</span>
-                    <div class="Break"></div>
+                    <div class="WideBreak"></div>
 
                     <span class="White" id="MathUtils">MathUtils: </span>
                     <div class="Break"></div>
@@ -208,6 +208,39 @@
                         <span class="Keyword">run</span><span class="Argument">(<span class="Label">/__disk:delete</span>[name])</span>
                     </div>
                     <div class="Explanation">Deletes an existing file or folder in the virtual filesystem. Uses relative paths. Ex: If you're in @__disk:root\documents, you can delete 'my_file'. Note that since Direct+ can't delete variables, only the reference to the variable is removed.</div>
+                    <div class="WideBreak"></div>
+
+                    <span class="White" id="Log">Log: </span>
+                    <div class="Break"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Keyword">use</span><span class="Argument">(__log)</span>
+                    </div>
+                    <div class="Explanation">Imports the Log extension, which provides premade log formats for errors, warnings, info, and success messages.</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Keyword">run</span><span class="Argument">(<span class="Label">/__log:error</span>[message])</span>
+                    </div>
+                    <div class="Explanation">Logs an error message to the console. Shows up in red.</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Keyword">run</span><span class="Argument">(<span class="Label">/__log:warning</span>[message])</span>
+                    </div>
+                    <div class="Explanation">Logs a warning message to the console. Shows up in yellow.</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Keyword">run</span><span class="Argument">(<span class="Label">/__log:info</span>[message])</span>
+                    </div>
+                    <div class="Explanation">Logs an info message to the console. Shows up in blue.</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Keyword">run</span><span class="Argument">(<span class="Label">/__log:success</span>[message])</span>
+                    </div>
+                    <div class="Explanation">Logs a success message to the console. Shows up in green.</div>
                     <div class="WideBreak"></div>
 
                     <span class="White" id="InstallingExtensions">Installing Extensions: </span>

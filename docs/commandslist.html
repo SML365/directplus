@@ -26,9 +26,9 @@
                 <div class="Break"></div>
 
                 <div class="Explanation">Common Data Types:</div>
-                <div class="Explanation">{num} = Number. (Including floats and integers)</div>
-                <div class="Explanation">{str} = String. (Wrap this in quotes!)</div>
-                <div class="Explanation">{bool} = Boolean value (either true or false)</div>
+                <div class="Explanation">{num} = Number (Including floats and integers).</div>
+                <div class="Explanation">{str} = String (Wrap this in quotes!).</div>
+                <div class="Explanation">{bool} = Boolean value (either true or false).</div>
                 <div class="Explanation">{any} = Any common data type is accepted.</div>
                 <div class="Break"></div>
                 
@@ -36,6 +36,7 @@
                 <div class="Explanation">{list} = A list. Can be a literal list or a variable referencing a list.</div>
                 <div class="Explanation">{ref} = run() reference.</div>
                 <div class="Explanation">{file} = A name of a Direct+ file.</div>
+                <div class="Explanation">{variable} = A variable name (without the @).</div>
                 <div class="WideBreak"></div>
 
                 <div class="Explanation">Direct+ is one-indexed, and 0 is reserved for special case operations and is not a valid element index. (Like in lists or as a failure method)</div>
@@ -99,9 +100,15 @@
                 <div class="Break"></div>
 
                 <div class="CodeBlock">
-                    <span class="Keyword">var</span><span class="Argument">(name</span><span class="Operator"> = </span><span class="Explanation">{any}</span><span class="Argument">)</span>
+                    <span class="Keyword">var</span><span class="Argument">(name)</span>
                 </div>
-                <div class="Explanation"> Creates or updates a variable with the value {any}. You can also define a variable without a value to set it to an empty string (""). Defining a list of variables (ex: var({a, b, c})) defines all the specified variables as empty strings. <a class="Link" href="https://en.wikipedia.org/wiki/Snake_case" target="_blank">Snake case</a> recommended.</div> 
+                <div class="Explanation">Creates a variable. Variables start with a value of an empty string (""). Use a list literal with variable names to batch declare variables (ex: {a, b, c} declares three variables). <a class="Link" href="https://en.wikipedia.org/wiki/Snake_case" target="_blank">Snake case</a> recommended.</div> 
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">val</span><span class="Argument">(<span class="Explanation">{any}</span><span class="Arrow"> => </span><span class="Argument">destination)</span>
+                </div>
+                <div class="Explanation">A container for storing values. Typically used to assign a value to a variable or to prepare variable interpolations.</div> 
                 <div class="WideBreak"></div>
 
                 <div class="CodeBlock">
@@ -152,7 +159,7 @@
                 <div class="CodeBlock">
                     <span class="Operator">/label</span>
                 </div>
-                <div class="Explanation"> A direct reference to parse from, can be named anything. It can also contain parameters. Naming a label '/watch' and specifying the name of a variable will run the code inside the label whenever the value changes. (See <a class="LinkAdvancedTopics" href="advancedtopics.html">Advanced Topics</a> for more information)</div>
+                <div class="Explanation"> A direct reference to parse from, can be named anything. It can also contain parameters. (See <a class="LinkAdvancedTopics" href="advancedtopics.html">Advanced Topics</a> for more information)</div>
                 <div class="WideBreak"></div>
 
                 <div class="CodeBlock">
@@ -231,7 +238,12 @@
                 <div class="Break"></div>
 
                 <div class="CodeBlock">
-                    <span class="Keyword">var</span><span class="Argument">(list_name</span><span class="Operator"> = </span><span class="Argument">{add, some, items, here}</span><span class="Argument">)</span>
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(list_name)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">val</span><span class="Argument">({some, items, here} <span class="Arrow"> => </span>list_name)</span>
+                    </div>
                 </div>
                 <div class="Explanation">Creates a list. There can be multiple different types in a list. Since lists are just variables, you can turn them into a variable and vice versa, just by changing its value. Nested lists are not supported.</div>
                 <div class="WideBreak"></div>
