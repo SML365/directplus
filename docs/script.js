@@ -1,3 +1,4 @@
+// Define constants
 const IntroductionButton = document.getElementById('IntroductionButton');
 const CommandsListButton = document.getElementById('CommandsListButton');
 const ExtensionsButton = document.getElementById('ExtensionsButton');
@@ -6,6 +7,7 @@ const AdvancedTopicsButton = document.getElementById('AdvancedTopicsButton');
 const ChangeLogButton = document.getElementById('ChangeLogButton');
 const ExamplesButton = document.getElementById('ExamplesButton');
 
+// Button clicks (Homepage)
 IntroductionButton.addEventListener('click', function() {
     window.location.href = "introduction.html";
 });
