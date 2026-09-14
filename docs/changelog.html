@@ -20,6 +20,7 @@
 
                 <pre class="Gray">
 e = experimental, s = speed/stability, n = new version
+9/13/2026: Fixed a bug where commands that accept literals like exists() and type() weren't automatically namespaced per-file. (v4.24s)
 9/11/2026: Completely changed the variable system, separating it into declaration and assignment phases. (v4.23e)
 9/4/2026: Fixed a few fatal bugs in __disk and slightly optimized arrow assignment. (v4.22s)
 9/2/2026: Removed required 'id' field in windows, buttons, and bounding boxes and replaced them with automatically generated IDs. (v4.21e)
@@ -248,7 +249,7 @@ For most use cases, the standard version (with the IDE, GUI support, and network
                 <pre class="Gray">
 Direct+ Portable is a headless, embeddable version of the standard Direct+ that you can easily drop into your own Scratch projects! It provides the syntax of Direct+ with Scratch's graphics and flexibility, allowing you to mix different programming languages into one project. Direct+ Portable is 'based' on a specific version of Direct+. For example, Portable v1.00 is based on Direct+ 4.17. Every three months (Jan 1, Apr 1, Jul 1, Oct 1) a new portable version is released, updated for the newest Direct+ version. It's encouraged to use the latest LSR (Last Stable Release) version in your projects instead, since it has all the Portable-specific stability improvements. New LSRs are released in the last month of a specific Portable's lifetime.
                 </pre>
-                <div class="Explanation">How do I save my Direct+ prograns?</div>
+                <div class="Explanation">How do I save my Direct+ programs?</div>
                 <pre class="Gray">
 You can save your programs by pressing [` + s], which gives you a long numeric code for you to copy and store someplace safe. Pressing [` + l] lets you paste it back into the editor. If you're using Portable, all the code is stored in the Scratch project, so no action needs to be taken.
                 </pre>
