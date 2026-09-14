@@ -38,7 +38,7 @@
 
 .Bool
 {
-    color: #9a49ec;
+    color: #AB7AFF;
     font-size: var(--fs_span);
 }
 
@@ -141,7 +141,7 @@ body
 
 .LinkAdvancedTopics
 {
-    color: #9a49ec;
+    color: #AB7AFF;
 }
 
 .LinkExtensions
@@ -276,7 +276,7 @@ body
 
 .Landing .Text .NavButtons .AdvancedTopicsButton:hover
 {
-    background-color: #9a49ec;
+    background-color: #AB7AFF;
     cursor: pointer;
 }
 
@@ -312,7 +312,7 @@ body
 
 .AdvancedTopics .Text .Title
 {
-    color: #9a49ec;
+    color: #AB7AFF;
     font-size: 25px;
 }
 
