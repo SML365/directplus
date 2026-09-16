@@ -381,6 +381,99 @@
                         <span class="Terminator">;</span>
                     </div>
                 </div>
+                <div class="WideBreak"></div>
+
+                <span class="White">Program Structure:</span>
+                <div class="Break"></div>
+
+                <div class="Explanation">It is recommended that you structure your programs accordingly. While Direct+ does not check for this structure, following this format will improve readability.</div>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Explanation">$ define metadata here (this is only required if you're writing an extension)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">#name</span><span class="Explanation"> fruit_counter</span>
+                    </div>
+                    <div>
+                        <span class="Argument">#version</span><span class="Explanation"> 1.02</span>
+                    </div>
+                    <div>
+                        <span class="Argument">#author</span><span class="Explanation"> sml_365</span>
+                    </div>
+                    <div>
+                        <span class="Argument">#description</span><span class="Explanation"> an example program (fruit included)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">#whatsnew</span><span class="Explanation"> fixed cherries not being counted properly</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Explanation">$ import any files here</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">use</span><span class="Argument">(__log)</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Explanation">$ define any variables here (group them by meaning and assign values if necessary)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">({temp1, temp2, temp3})</span><span class="Explanation"> $ snake_case recommended with no underscores between numbers (ex: temp3 instead of temp_3)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">({apple_count, banana_count, cherry_count})</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">val</span><span class="Argument">(5<span class="Arrow"> => </span>temp1)</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Explanation">$ main code goes here</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">loop</span><span class="Argument">(10)</span><span class="Operator"> &lt;&lt;</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;paste</span><span class="Argument">(text<span class="String">"counting fruit..."</span>)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;run</span><span class="Argument">(<span class="Label">/countfruit</span>)</span><span class="Explanation"> $ functions have no casing</span>
+                    </div>
+                    <div>
+                        <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
+                    </div>
+                    <div>
+                        <span class="Terminator">;</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Explanation">$ define any functions here</span>
+                    </div>
+                    <div>
+                        <span class="Label">/countfruit</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;add</span><span class="Argument">(1, <span class="Variable">@apple_count</span><span class="Arrow"> => </span><span class="Argument">apple_count)</span></span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;add</span><span class="Argument">(2, <span class="Variable">@banana_count</span><span class="Arrow"> => </span><span class="Argument">banana_count)</span></span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;add</span><span class="Argument">(3, <span class="Variable">@cherry_count</span><span class="Arrow"> => </span><span class="Argument">cherry_count)</span></span>
+                    </div>
+                    <div>
+                        <span class="Label">/return</span>
+                    </div>
+                    <div>
+                        <span class="Terminator">;</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Explanation">$ define additional functions here</span>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
