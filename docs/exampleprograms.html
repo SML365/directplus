@@ -466,12 +466,492 @@
                     <div>
                         <span class="Label">/return</span>
                     </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Explanation">$ define additional functions here</span>
+                    </div>
+                </div>
+                <div class="WideBreak"></div>
+
+                <span class="White">Flagship Programs: Operating System</span>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/boot</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/intro</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/repl</span><span class="Argument">)</span>
+                    </div>
                     <div>
                         <span class="Terminator">;</span>
                     </div>
                     <div class="Break"></div>
                     <div>
-                        <span class="Explanation">$ define additional functions here</span>
+                        <span class="Label">/boot</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">paste</span><span class="Argument">(text</span><span class="String">"directdos shell v1.0.0"</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">use</span><span class="Argument">(__stringutils)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">use</span><span class="Argument">(__disk)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">use</span><span class="Argument">(__log)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:success</span><span class="Argument">[</span><span class="String">"imported modules"</span><span class="Argument">])</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">var</span><span class="Argument">({input, parsed_input})</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">var</span><span class="Argument">({comm, arg1, arg2, arg3})</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">var</span><span class="Argument">({tmp1, tmp2, elevated})</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">val</span><span class="Argument">(</span><span class="Bool">false</span><span class="Arrow"> =&gt; </span><span class="Argument">elevated</span><span class="Argument">)</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:success</span><span class="Argument">[</span><span class="String">"defined variables"</span><span class="Argument">])</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:warning</span><span class="Argument">[</span><span class="String">"this next portion will take a while"</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__disk:init</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__disk:folder</span><span class="Argument">[</span><span class="String">"bin"</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__disk:walk</span><span class="Argument">[</span><span class="Argument">{root, bin}</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__disk:file</span><span class="Argument">[</span><span class="String">"cd"</span><span class="Argument">, </span><span class="Bool">false</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__disk:file</span><span class="Argument">[</span><span class="String">"read"</span><span class="Argument">, </span><span class="Bool">false</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__disk:file</span><span class="Argument">[</span><span class="String">"dplus"</span><span class="Argument">, </span><span class="Bool">false</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__disk:file</span><span class="Argument">[</span><span class="String">"file"</span><span class="Argument">, </span><span class="Bool">false</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__disk:file</span><span class="Argument">[</span><span class="String">"folder"</span><span class="Argument">, </span><span class="Bool">false</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__disk:file</span><span class="Argument">[</span><span class="String">"help"</span><span class="Argument">, </span><span class="Bool">false</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__disk:file</span><span class="Argument">[</span><span class="String">"write"</span><span class="Argument">, </span><span class="Bool">false</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__disk:file</span><span class="Argument">[</span><span class="String">"clear"</span><span class="Argument">, </span><span class="Bool">false</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__disk:file</span><span class="Argument">[</span><span class="String">"poweroff"</span><span class="Argument">, </span><span class="Bool">false</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__disk:walk</span><span class="Argument">[</span><span class="Argument">{root}</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:success</span><span class="Argument">[</span><span class="String">"mounted filesystem"</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Label">/return</span>
+                    </div>
+                    <div>
+                        <span class="Terminator">;</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Label">/intro</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:info</span><span class="Argument">[</span><span class="String">"run 'cd root\bin' and 'ls' to view commands"</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:info</span><span class="Argument">[</span><span class="String">"run 'help' for additional help"</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Label">/return</span>
+                    </div>
+                    <div>
+                        <span class="Terminator">;</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Label">/repl</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">loop</span><span class="Argument">(</span><span class="Argument">0</span><span class="Argument">) </span><span class="Operator">&lt;&lt;</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/get_input</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">turbo</span><span class="Argument">() </span><span class="Operator">&lt;&lt;</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__stringutils:separate</span><span class="Argument">[</span><span class="String">"@input"</span><span class="Argument">, </span><span class="String">" "</span><span class="Argument">] </span><span class="Arrow">=&gt; </span><span class="Argument">parsed_input</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/map_parameters</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Operator">&gt;&gt;</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">numof</span><span class="Argument">(</span><span class="Variable">@__disk:root\bin</span><span class="Argument">, </span><span class="Variable">@comm</span><span class="Arrow"> =&gt; </span><span class="Argument">tmp1</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">item</span><span class="Argument">(</span><span class="Variable">@__disk:root\bin</span><span class="Argument">, </span><span class="Variable">@tmp1</span><span class="Arrow"> =&gt; </span><span class="Argument">tmp2</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">if</span><span class="Argument">(</span><span class="Variable">@tmp1</span><span class="Operator"> == </span><span class="Argument">0</span><span class="Argument">) </span><span class="Operator">&lt;&lt;</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:error</span><span class="Argument">[</span><span class="String">"can't execute @comm|: no such file or directory"</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Operator">&gt;&gt;</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">else</span><span class="Argument">()</span><span class="Operator"> &lt;&lt;</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/</span><span class="Variable">@tmp2</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Operator">&gt;&gt;</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Operator">&gt;&gt;</span>
+                    </div>
+                    <div>
+                        <span class="Label">/return</span>
+                    </div>
+                    <div>
+                        <span class="Terminator">;</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Label">/get_input</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">paste</span><span class="Argument">(input</span><span class="String">"@__disk:full_path &gt; "</span><span class="Arrow"> =&gt; </span><span class="Argument">input</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Label">/return</span>
+                    </div>
+                    <div>
+                        <span class="Terminator">;</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Label">/map_parameters</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">turbo</span><span class="Argument">() </span><span class="Operator">&lt;&lt;</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">if</span><span class="Argument">(</span><span class="Variable">@parsed_input:1</span><span class="Operator"> == </span><span class="String">"elevate"</span><span class="Argument">) </span><span class="Operator">&lt;&lt;</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">val</span><span class="Argument">(</span><span class="Variable">@parsed_input:2</span><span class="Arrow"> =&gt; </span><span class="Argument">comm</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">val</span><span class="Argument">(</span><span class="Variable">@parsed_input:3</span><span class="Arrow"> =&gt; </span><span class="Argument">arg1</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">val</span><span class="Argument">(</span><span class="Variable">@parsed_input:4</span><span class="Arrow"> =&gt; </span><span class="Argument">arg2</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">val</span><span class="Argument">(</span><span class="Variable">@parsed_input:5</span><span class="Arrow"> =&gt; </span><span class="Argument">arg3</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">val</span><span class="Argument">(</span><span class="Bool">true</span><span class="Arrow"> =&gt; </span><span class="Argument">elevated</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Operator">&gt;&gt;</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">else</span><span class="Argument">()</span><span class="Operator"> &lt;&lt;</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">val</span><span class="Argument">(</span><span class="Variable">@parsed_input:1</span><span class="Arrow"> =&gt; </span><span class="Argument">comm</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">val</span><span class="Argument">(</span><span class="Variable">@parsed_input:2</span><span class="Arrow"> =&gt; </span><span class="Argument">arg1</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">val</span><span class="Argument">(</span><span class="Variable">@parsed_input:3</span><span class="Arrow"> =&gt; </span><span class="Argument">arg2</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">val</span><span class="Argument">(</span><span class="Variable">@parsed_input:4</span><span class="Arrow"> =&gt; </span><span class="Argument">arg3</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">val</span><span class="Argument">(</span><span class="Bool">false</span><span class="Arrow"> =&gt; </span><span class="Argument">elevated</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Operator">&gt;&gt;</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Operator">&gt;&gt;</span>
+                    </div>
+                    <div>
+                        <span class="Label">/return</span>
+                    </div>
+                    <div>
+                        <span class="Terminator">;</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Label">/cd</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">turbo</span><span class="Argument">() </span><span class="Operator">&lt;&lt;</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__stringutils:separate</span><span class="Argument">[</span><span class="Variable">@arg1</span><span class="Argument">, </span><span class="String">"\"</span><span class="Argument">] </span><span class="Arrow">=&gt; </span><span class="Argument">tmp1</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__disk:walk</span><span class="Argument">[</span><span class="Variable">@tmp1</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Operator">&gt;&gt;</span>
+                    </div>
+                    <div>
+                        <span class="Label">/return</span>
+                    </div>
+                    <div>
+                        <span class="Terminator">;</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Label">/read</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">val</span><span class="Argument">(</span><span class="String">"__disk:@__disk:full_path"</span><span class="Arrow"> =&gt; </span><span class="Argument">tmp1</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:success</span><span class="Argument">[</span><span class="String">"@@tmp1"</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Label">/return</span>
+                    </div>
+                    <div>
+                        <span class="Terminator">;</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Label">/file</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__disk:file</span><span class="Argument">[</span><span class="Variable">@arg1</span><span class="Argument">, </span><span class="String">"."</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:success</span><span class="Argument">[</span><span class="String">"file '@arg1|' is made in @__disk:full_path|\@arg1"</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Label">/return</span>
+                    </div>
+                    <div>
+                        <span class="Terminator">;</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Label">/folder</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__disk:folder</span><span class="Argument">[</span><span class="Variable">@arg1</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:success</span><span class="Argument">[</span><span class="String">"folder '@arg1|' is made in @__disk:full_path|\@arg1"</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Label">/return</span>
+                    </div>
+                    <div>
+                        <span class="Terminator">;</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Label">/write</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">if</span><span class="Argument">(</span><span class="Variable">@elevated</span><span class="Operator"> == </span><span class="Bool">true</span><span class="Argument">) </span><span class="Operator">&lt;&lt;</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">paste</span><span class="Argument">(input</span><span class="String">"&gt;&gt;&gt; "</span><span class="Arrow"> =&gt; </span><span class="Argument">tmp1</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__disk:update</span><span class="Argument">[</span><span class="String">"@arg1"</span><span class="Argument">, </span><span class="Variable">@tmp1</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:success</span><span class="Argument">[</span><span class="String">"updated @__disk:full_path|\@arg1 to @tmp1"</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Operator">&gt;&gt;</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">else</span><span class="Argument">()</span><span class="Operator"> &lt;&lt;</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:warning</span><span class="Argument">[</span><span class="String">"can't run without 'elevate' prefix"</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Operator">&gt;&gt;</span>
+                    </div>
+                    <div>
+                        <span class="Label">/return</span>
+                    </div>
+                    <div>
+                        <span class="Terminator">;</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Label">/poweroff</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">if</span><span class="Argument">(</span><span class="Variable">@elevated</span><span class="Operator"> == </span><span class="Bool">true</span><span class="Argument">) </span><span class="Operator">&lt;&lt;</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">console</span><span class="Argument">(</span><span class="String">clear</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">wait</span><span class="Argument">(</span><span class="Argument">0.5</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:info</span><span class="Argument">[</span><span class="String">"running 'poweroff' participants"</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">wait</span><span class="Argument">(</span><span class="Argument">3</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">console</span><span class="Argument">(</span><span class="String">clear</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">console</span><span class="Argument">(</span><span class="String">exit</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Operator">&gt;&gt;</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">else</span><span class="Argument">()</span><span class="Operator"> &lt;&lt;</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:warning</span><span class="Argument">[</span><span class="String">"can't run without 'elevate' prefix"</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Operator">&gt;&gt;</span>
+                    </div>
+                    <div>
+                        <span class="Label">/return</span>
+                    </div>
+                    <div>
+                        <span class="Terminator">;</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Label">/dplus</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">if</span><span class="Argument">(</span><span class="Variable">@elevated</span><span class="Operator"> == </span><span class="Bool">true</span><span class="Argument">) </span><span class="Operator">&lt;&lt;</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">exec</span><span class="Argument">(</span><span class="Variable">@arg1</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Operator">&gt;&gt;</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">else</span><span class="Argument">()</span><span class="Operator"> &lt;&lt;</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:warning</span><span class="Argument">[</span><span class="String">"can't run without 'elevate' prefix"</span><span class="Argument">])</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Operator">&gt;&gt;</span>
+                    </div>
+                    <div>
+                        <span class="Label">/return</span>
+                    </div>
+                    <div>
+                        <span class="Terminator">;</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Label">/clear</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">console</span><span class="Argument">(</span><span class="String">clear</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Label">/return</span>
+                    </div>
+                    <div>
+                        <span class="Terminator">;</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Label">/help</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">color</span><span class="Argument">(</span><span class="Argument">148</span><span class="Argument">, </span><span class="Argument">75</span><span class="Argument">, </span><span class="Argument">0</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">paste</span><span class="Argument">(text</span><span class="String">"elevate - runs with priveliges"</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">paste</span><span class="Argument">(text</span><span class="String">"elevate poweroff - shuts down"</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">paste</span><span class="Argument">(text</span><span class="String">"cd &lt;absolute dir&gt; - moves somewhere"</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">paste</span><span class="Argument">(text</span><span class="String">"file &lt;name&gt; - makes a file"</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">paste</span><span class="Argument">(text</span><span class="String">"folder &lt;name&gt; - makes a folder"</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">paste</span><span class="Argument">(text</span><span class="String">"read - reads the contents of the current directory"</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">paste</span><span class="Argument">(text</span><span class="String">"elevate write &lt;name&gt; - writes to a file %(a prompt will appear%)"</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">paste</span><span class="Argument">(text</span><span class="String">"clear - clears the screen"</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">paste</span><span class="Argument">(text</span><span class="String">"elevate dplus &lt;code&gt; - executes direct+ code"</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">paste</span><span class="Argument">(text</span><span class="String">"help - shows this message"</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">color</span><span class="Argument">(</span><span class="Argument">0</span><span class="Argument">, </span><span class="Argument">100</span><span class="Argument">, </span><span class="Argument">0</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Label">/return</span>
+                    </div>
+                    <div>
+                        <span class="Terminator">;</span>
                     </div>
                 </div>
             </div>
