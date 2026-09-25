@@ -439,7 +439,7 @@
                         <span class="Keyword">&ensp;&ensp;paste</span><span class="Argument">(text<span class="String">"counting fruit..."</span>)</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;run</span><span class="Argument">(<span class="Label">/countfruit</span>)</span><span class="Explanation"> $ functions have no casing</span>
+                        <span class="Keyword">&ensp;&ensp;run</span><span class="Argument">(<span class="Label">/count_fruit</span>)</span><span class="Explanation"> $ functions use the same casing as variables through functions from other files don't use casing</span>
                     </div>
                     <div>
                         <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
@@ -452,7 +452,7 @@
                         <span class="Explanation">$ define any functions here</span>
                     </div>
                     <div>
-                        <span class="Label">/countfruit</span>
+                        <span class="Label">/count_fruit</span>
                     </div>
                     <div>
                         <span class="Keyword">&ensp;&ensp;add</span><span class="Argument">(1, <span class="Variable">@apple_count</span><span class="Arrow"> => </span><span class="Argument">apple_count)</span></span>
@@ -607,7 +607,7 @@
                         <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">turbo</span><span class="Argument">() </span><span class="Operator">&lt;&lt;</span>
                     </div>
                     <div>
-                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__stringutils:separate</span><span class="Argument">[</span><span class="String">"@input"</span><span class="Argument">, </span><span class="String">" "</span><span class="Argument">] </span><span class="Arrow">=&gt; </span><span class="Argument">parsed_input</span><span class="Argument">)</span>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__stringutils:separate</span><span class="Argument">[</span><span class="String">"<span class="Variable">@input</span>"</span><span class="Argument">, </span><span class="String">" "</span><span class="Argument">] </span><span class="Arrow">=&gt; </span><span class="Argument">parsed_input</span><span class="Argument">)</span>
                     </div>
                     <div>
                         <span class="Argument">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/map_parameters</span><span class="Argument">)</span>
@@ -625,7 +625,7 @@
                         <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">if</span><span class="Argument">(</span><span class="Variable">@tmp1</span><span class="Operator"> == </span><span class="Argument">0</span><span class="Argument">) </span><span class="Operator">&lt;&lt;</span>
                     </div>
                     <div>
-                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:error</span><span class="Argument">[</span><span class="String">"can't execute @comm|: no such file or directory"</span><span class="Argument">])</span>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:error</span><span class="Argument">[</span><span class="String">"can't execute <span class="Variable">@comm</span>|: no such file or directory"</span><span class="Argument">])</span>
                     </div>
                     <div>
                         <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Operator">&gt;&gt;</span>
@@ -653,7 +653,7 @@
                         <span class="Label">/get_input</span>
                     </div>
                     <div>
-                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">paste</span><span class="Argument">(input</span><span class="String">"@__disk:full_path &gt; "</span><span class="Arrow"> =&gt; </span><span class="Argument">input</span><span class="Argument">)</span>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">paste</span><span class="Argument">(input</span><span class="String">"<span class="Variable">@__disk:full_path</span> &gt; "</span><span class="Arrow"> =&gt; </span><span class="Argument">input</span><span class="Argument">)</span>
                     </div>
                     <div>
                         <span class="Label">/return</span>
@@ -746,10 +746,10 @@
                         <span class="Label">/read</span>
                     </div>
                     <div>
-                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">val</span><span class="Argument">(</span><span class="String">"__disk:@__disk:full_path"</span><span class="Arrow"> =&gt; </span><span class="Argument">tmp1</span><span class="Argument">)</span>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">val</span><span class="Argument">(</span><span class="String">"__disk:<span class="Variable">@__disk:full_path</span>"</span><span class="Arrow"> =&gt; </span><span class="Argument">tmp1</span><span class="Argument">)</span>
                     </div>
                     <div>
-                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:success</span><span class="Argument">[</span><span class="String">"@@tmp1"</span><span class="Argument">])</span>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:success</span><span class="Argument">[</span><span class="String">"<span class="Variable">@tmp1</span>"</span><span class="Argument">])</span>
                     </div>
                     <div>
                         <span class="Label">/return</span>
@@ -765,7 +765,7 @@
                         <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__disk:file</span><span class="Argument">[</span><span class="Variable">@arg1</span><span class="Argument">, </span><span class="String">"."</span><span class="Argument">])</span>
                     </div>
                     <div>
-                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:success</span><span class="Argument">[</span><span class="String">"file '@arg1|' is made in @__disk:full_path|\@arg1"</span><span class="Argument">])</span>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:success</span><span class="Argument">[</span><span class="String">"file '<span class="Variable">@arg1</span>|' is made in <span class="Variable">@__disk:full_path\@arg1</span>"</span><span class="Argument">])</span>
                     </div>
                     <div>
                         <span class="Label">/return</span>
@@ -781,7 +781,7 @@
                         <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__disk:folder</span><span class="Argument">[</span><span class="Variable">@arg1</span><span class="Argument">])</span>
                     </div>
                     <div>
-                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:success</span><span class="Argument">[</span><span class="String">"folder '@arg1|' is made in @__disk:full_path|\@arg1"</span><span class="Argument">])</span>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:success</span><span class="Argument">[</span><span class="String">"folder '<span class="Variable">@arg1</span>|' is made in <span class="Variable">@__disk:full_path\@arg1</span>"</span><span class="Argument">])</span>
                     </div>
                     <div>
                         <span class="Label">/return</span>
@@ -800,10 +800,10 @@
                         <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">paste</span><span class="Argument">(input</span><span class="String">"&gt;&gt;&gt; "</span><span class="Arrow"> =&gt; </span><span class="Argument">tmp1</span><span class="Argument">)</span>
                     </div>
                     <div>
-                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__disk:update</span><span class="Argument">[</span><span class="String">"@arg1"</span><span class="Argument">, </span><span class="Variable">@tmp1</span><span class="Argument">])</span>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__disk:update</span><span class="Argument">[</span><span class="String">"<span class="Variable">@arg1</span>"</span><span class="Argument">, </span><span class="Variable">@tmp1</span><span class="Argument">])</span>
                     </div>
                     <div>
-                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:success</span><span class="Argument">[</span><span class="String">"updated @__disk:full_path|\@arg1 to @tmp1"</span><span class="Argument">])</span>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:success</span><span class="Argument">[</span><span class="String">"updated <span class="Variable">@__disk:full_path\@arg1</span> to <span class="Variable">@tmp1</span>"</span><span class="Argument">])</span>
                     </div>
                     <div>
                         <span class="Argument">&ensp;&ensp;</span><span class="Operator">&gt;&gt;</span>
@@ -831,7 +831,7 @@
                         <span class="Argument">&ensp;&ensp;</span><span class="Keyword">if</span><span class="Argument">(</span><span class="Variable">@elevated</span><span class="Operator"> == </span><span class="Bool">true</span><span class="Argument">) </span><span class="Operator">&lt;&lt;</span>
                     </div>
                     <div>
-                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">console</span><span class="Argument">(</span><span class="String">clear</span><span class="Argument">)</span>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">console</span><span class="Argument">(clear)</span>
                     </div>
                     <div>
                         <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">wait</span><span class="Argument">(</span><span class="Argument">0.5</span><span class="Argument">)</span>
@@ -843,10 +843,10 @@
                         <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">wait</span><span class="Argument">(</span><span class="Argument">3</span><span class="Argument">)</span>
                     </div>
                     <div>
-                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">console</span><span class="Argument">(</span><span class="String">clear</span><span class="Argument">)</span>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">console</span><span class="Argument">(clear)</span>
                     </div>
                     <div>
-                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">console</span><span class="Argument">(</span><span class="String">exit</span><span class="Argument">)</span>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">console</span><span class="Argument">(exit)</span>
                     </div>
                     <div>
                         <span class="Argument">&ensp;&ensp;</span><span class="Operator">&gt;&gt;</span>
@@ -899,7 +899,7 @@
                         <span class="Label">/clear</span>
                     </div>
                     <div>
-                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">console</span><span class="Argument">(</span><span class="String">clear</span><span class="Argument">)</span>
+                        <span class="Argument">&ensp;&ensp;</span><span class="Keyword">console</span><span class="Argument">(clear)</span>
                     </div>
                     <div>
                         <span class="Label">/return</span>
