@@ -19,7 +19,7 @@
 e = experimental, s = speed/stability, n = new version
 9/17/2026: Fixed a bug where literal ">>" characters disrupted blocks. (v4.26s)
 9/16/2026: Transitioned /__disk:update to relative paths instead of absolute ones, and fixed type() not working. Also fixed booleans triggering issues in val(). (v4.25s)
-9/13/2026: Fixed a bug where commands that accept literals like exists() and type() weren't automatically namespaced per-file. (v4.24s)
+9/13/2026: Fixed a bug where commands that accept literals like exists() weren't automatically namespaced per-file. (v4.24s)
 9/11/2026: Completely changed the variable system, separating it into declaration and assignment phases. (v4.23e)
 9/4/2026: Fixed a few fatal bugs in __disk and slightly optimized arrow assignment. (v4.22s)
 9/2/2026: Removed required 'id' field in windows, buttons, and bounding boxes and replaced them with automatically generated IDs. (v4.21e)
@@ -187,7 +187,8 @@ Fixed/Improved: Variables, Text editor efficiency
 
                 <h1>PORTABLE CHANGE LOG</h1>
                 <pre class="Gray">
-(-.--) = portable version, [-.--] = direct+ version
+[-.--] = portable version, (-.--) = direct+ version that the portable version is based off of
+8/24/2026: LSR: Fixed a couple of crashes [v1.00 LSR]
 8/15/2026: Portable Released! [v1.00] (v4.17s)
                 </pre>
 
@@ -254,7 +255,7 @@ For most use cases, the standard version (with the IDE, GUI support, and network
                 <div class="Explanation">What is Direct+ Portable?</div>
                 <pre class="Gray">
 Direct+ Portable is a headless, embeddable version of the standard Direct+ that you can easily drop into your own Scratch projects! It provides the syntax of Direct+ with Scratch's graphics and flexibility, allowing you to mix different programming languages into one project. Direct+ Portable is 'based' on a specific version of Direct+. For example, Portable v1.00 is based on Direct+ 
-. Every three months (Jan 1, Apr 1, Jul 1, Oct 1) a new portable version is released, updated for the newest Direct+ version. It's encouraged to use the latest LSR (Last Stable Release) version in your projects instead, since it has all the Portable-specific stability improvements. New LSRs are released in the last month of a specific Portable's lifetime.
+. Every three months (Jan 1, Apr 1, Jul 1, Oct 1) a new portable version is released, updated for the newest Direct+ version. It's encouraged to use the latest LSR (Last Stable Release) version in your projects instead, since it has all the Portable-specific stability improvements that the normal version of Direct+ lacks. New LSRs are released in the last month of a specific Portable's lifetime.
                 </pre>
                 <div class="Explanation">How do I save my Direct+ programs?</div>
                 <pre class="Gray">
