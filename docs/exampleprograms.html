@@ -288,7 +288,7 @@
                         <span class="Explanation">$ define variables</span>
                     </div>
                     <div>
-                        <span class="Keyword">var</span><span class="Argument">({head, current_node, node_value, node_pointer, temp})</span>
+                        <span class="Keyword">var</span><span class="Argument">(current_node)</span>
                     </div>
                     <div class="Break"></div>
 
@@ -296,55 +296,36 @@
                         <span class="Explanation">$ define linked list</span>
                     </div>
                     <div>
-                        <span class="Keyword">var</span><span class="Argument">(head)</span>
+                        <span class="Keyword">var</span><span class="Argument">({head, node1, node2, node3})</span>
                     </div>
                     <div>
                         <span class="Keyword">val</span><span class="Argument">(<span class="String">"node1"</span><span class="Arrow"> => </span>head)</span>
                     </div>
                     <div>
-                        <span class="Keyword">var</span><span class="Argument">(node1)</span>
-                    </div>
-                    <div>
                         <span class="Keyword">val</span><span class="Argument">({<span class="String">"apple"</span>, <span class="String">"node2"</span>}<span class="Arrow"> => </span>node1)</span>
                     </div>
                     <div>
-                        <span class="Keyword">var</span><span class="Argument">(node2)</span>
-                    </div>
-                    <div>
                         <span class="Keyword">val</span><span class="Argument">({<span class="String">"banana"</span>, <span class="String">"node3"</span>}<span class="Arrow"> => </span>node2)</span>
-                    </div>
-                    <div>
-                        <span class="Keyword">var</span><span class="Argument">(node3)</span>
                     </div>
                     <div>
                         <span class="Keyword">val</span><span class="Argument">({<span class="String">"cherry"</span>, <span class="String">"null"</span>}<span class="Arrow"> => </span>node3)</span>
                     </div>
                     <div class="Break"></div>
 
-                    <div class="Explanation">$ traverse through list and print each item</div>
-                    <div>
-                        <span class="Keyword">var</span><span class="Argument">(current_node)</span>
-                    </div>
+                    <div class="Explanation">$ traverse through the list and print each item</div>
                     <div>
                         <span class="Keyword">val</span><span class="Argument">(<span class="Variable">@head</span><span class="Arrow"> => </span>current_node)</span>
                     </div>
-
                     <div>
                         <span class="Keyword">loop</span><span class="Argument">(0)</span><span class="Operator"> &lt;&lt;</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;run</span><span class="Argument">(<span class="Label">/get_pointer</span>[<span class="Double">@@current_node</span>]<span class="Arrow"> => </span><span class="Argument">node_pointer</span><span class="Argument">)</span>
-                    </div>
-                    <div>
-                        <span class="Keyword">&ensp;&ensp;item</span><span class="Argument">(<span class="Argument"><span class="Double">@@current_node</span>, 1<span class="Arrow"> => </span>node_value)</span></span>
-                    </div>
-                    <div>
-                        <span class="Keyword">&ensp;&ensp;paste</span><span class="Argument">(text<span class="String">"current item: <span class="Variable">@node_value</span>"</span><span class="Argument">)</span>
+                        <span class="Keyword">&ensp;&ensp;paste</span><span class="Argument">(text<span class="String">"current value: <span class="Double">@@current_node</span>|:1"</span><span class="Argument">)</span>
                     </div>
                     <div class="Break"></div>
 
                     <div>
-                        <span class="Keyword">&ensp;&ensp;if</span><span class="Argument">(<span class="Variable">@node_pointer</span><span class="Operator"> == </span><span class="String">"null"</span><span class="Argument">)</span><span class="Operator"> &lt;&lt;</span>
+                        <span class="Keyword">&ensp;&ensp;if</span><span class="Argument">(<span class="String">"<span class="Double">@@current_node</span>|:2"</span><span class="Operator"> == </span><span class="String">"null"</span><span class="Argument">)</span><span class="Operator"> &lt;&lt;</span>
                     </div>
                     <div>
                         <span class="Keyword">&ensp;&ensp;&ensp;&ensp;break</span><span class="Argument">()</span>
@@ -355,21 +336,10 @@
                     <div class="Break"></div>
 
                     <div>
-                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(<span class="Variable">@node_pointer</span><span class="Arrow"> => </span>current_node)</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(<span class="String">"<span class="Double">@@current_node</span>|:2"</span><span class="Arrow"> => </span>current_node)</span>
                     </div>
                     <div>
                         <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
-                    </div>
-                    <div>
-                        <span class="Terminator">;</span>
-                    </div>
-                    <div class="Break"></div>
-                    <span class="Label">/get_pointer</span><span class="Argument">[node]</span>
-                    <div>
-                        <span class="Keyword">&ensp;&ensp;item</span><span class="Argument">(<span class="Variable">@get_pointer:node</span>, 2<span class="Arrow"> => </span> temp)</span>
-                    </div>
-                    <div>
-                        <span class="Label">&ensp;&ensp;/return</span><span class="Argument">[<span class="Variable">@temp</span>]</span>
                     </div>
                     <div>
                         <span class="Terminator">;</span>
