@@ -675,6 +675,46 @@
                 </div>
                 <div class="WideBreak"></div>
 
+                <div class="Explanation">PointGroups: </div>
+                <div class="Break"></div>
+
+                <div class="Explanation">PointGroups are line segments that are joined together, allowing you to make tables, charts, and custom polygons. </div>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Explanation">$ Note that this should be nested in a window block</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">gscope</span><span class="Argument">(<span class="String">"pointgroup"</span>, <span class="String">"id"</span>)</span><span class="Operator"> &lt;&lt;</span> <span class="Explanation">&ensp;$ Make the id unique to this element only.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">({x, y, color, thickness, close, point1})</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span><span class="Argument">x)</span> <span class="Explanation"> $ The global X position of the pointgroup. Coordinate system shown above.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span><span class="Argument">y)</span> <span class="Explanation"> $ The global Y position of the pointgroup. Coordinate system shown above.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">({hue, brightness, gray}<span class="Arrow"> => </span><span class="Argument">color)</span> <span class="Explanation"> $ The color of the pointgroup.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(5<span class="Arrow"> => </span><span class="Argument">thickness)</span> <span class="Explanation"> $ The thickness the lines are drawn at</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">({x, y}<span class="Arrow"> => </span><span class="Argument">point1)</span> <span class="Explanation"> $ Defines a point with coordinates {x, y}. These use the same coordinate system as normal GUI elements, but their origin starts at the global X and Y. You can define multiple points as long as you follow the 'point#' naming convention.</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(<span class="Bool">false</span><span class="Arrow"> => </span><span class="Argument">close)</span> <span class="Explanation"> $ Whether to join the last point with the first one to make a closed shape or not.</span>
+                    </div>
+                    <div>
+                        <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
+                    </div>
+                </div>
+                <div class="WideBreak"></div>
+
                 <div class="Explanation">Pages: </div>
                 <div class="Break"></div>
 
