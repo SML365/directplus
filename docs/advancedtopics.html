@@ -704,7 +704,7 @@
                         <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(5<span class="Arrow"> => </span><span class="Argument">thickness)</span> <span class="Explanation"> $ The thickness the lines are drawn at</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">({x, y}<span class="Arrow"> => </span><span class="Argument">point1)</span> <span class="Explanation"> $ Defines a point with coordinates {x, y}. These use the same coordinate system as normal GUI elements, but their origin starts at the global X and Y. You can define multiple points as long as you follow the 'point#' naming convention.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">({x, y}<span class="Arrow"> => </span><span class="Argument">point1)</span> <span class="Explanation"> $ Defines a point with coordinates {x, y}. These use the same coordinate system (top left, x++ right, y++ up) as normal GUI elements, but their origin starts at the X and Y defined earlier. You can define multiple points as long as you follow the 'point#' naming convention.</span>
                     </div>
                     <div>
                         <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(<span class="Bool">false</span><span class="Arrow"> => </span><span class="Argument">close)</span> <span class="Explanation"> $ Whether to join the last point with the first one to make a closed shape or not.</span>
