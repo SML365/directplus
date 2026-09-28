@@ -172,7 +172,7 @@
                 <div class="CodeBlock">
                     <span class="Keyword">run</span><span class="Argument">(</span><span class="Explanation">{ref}</span><span class="Argument">)</span>
                 </div>
-                <div class="Explanation"> Reroutes the interpreter to the specified {ref} (use /reference_name to select a reference). Use /file:function to run a function from another file. The run() system is stack-based, meaning run() chaining is supported along with nesting with all control flow elements. Labels themselves shouldn't be nested (Discouraged since that approach just doesn't make sense and leads to many bugs). These calls can also contain parameters. (See <a class="LinkAdvancedTopics" href="advancedtopics.html">Advanced Topics</a> for more information)</div>
+                <div class="Explanation"> Reroutes the interpreter to the specified {ref} (use /reference_name to select a reference). Use /file:function to run a function from another file. The run() system is stack-based, meaning run() chaining is supported along with nesting with all control flow elements. Labels themselves shouldn't be nested (Discouraged since that approach just doesn't make sense and leads to many bugs), and recursion isn't supported. These calls can also contain parameters, and arrow assignment is used in the run() call if the function returns a value. (See <a class="LinkAdvancedTopics" href="advancedtopics.html">Advanced Topics</a> for more information)</div>
                 <div class="WideBreak"></div>
 
                 <div class="CodeBlock">

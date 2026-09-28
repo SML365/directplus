@@ -365,7 +365,7 @@
                 <div class="Explanation">1. If both inputs are numbers, the output is a number.</div>
                 <div class="Explanation">2. If both inputs are lists, the output is a list. Each item in the output list is the result of the operation being performed on the corresponding items in the input lists. If the lists are different lengths, then a <a href="errorguide.html" class="LinkErrorGuide">Lists are Different Lengths</a> error will occur.</div>
                 <div class="Explanation">3. If one input is a list and the other is a number, the output is a list. The input number is applied to each item in the list.</div>
-                <div class="Explanation">4. If there's just one input parameter and the input is a list, then the output is a list. The input list is used as the singular input.</div>
+                <div class="Explanation">4. If there's just one input parameter and the input is a list, then the output is a list. The input list is used as the singular input. Note that this only works for commands that only have one parameter.</div>
                 <div class="WideBreak"></div>
 
                 <div class="Explanation">Examples: </div>
@@ -373,7 +373,7 @@
 
                 <div class="CodeBlock">
                     <div>
-                        <span class="Keyword">var</span><span class="Argument">({num1, num2, list1, list2})</span>
+                        <span class="Keyword">var</span><span class="Argument">({num1, num2, list1, list2, result})</span>
                     </div>
                     <div>
                         <span class="Keyword">val</span><span class="Argument">(5<span class="Arrow"> => </span> num1)</span>
@@ -463,7 +463,7 @@
                         <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">({hue, brightness, gray}<span class="Arrow"> => </span><span class="Argument">outline_color)</span> <span class="Explanation"> $ The color of the window border.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(10<span class="Arrow"> => </span><span class="Argument">roundness)</span> <span class="Explanation"> $ The roundness of the button's corners. Use a roundness greater than 2 for actual rounded corners. Anything lower is ignored.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(10<span class="Arrow"> => </span><span class="Argument">roundness)</span> <span class="Explanation"> $ The roundness of the window's corners. Use a roundness greater than 2 for actual rounded corners. Anything lower is ignored.</span>
                     </div>
                     <div>
                         <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(<span class="Bool">true/false</span><span class="Arrow"> => </span><span class="Argument">draggable)</span> <span class="Explanation"> $ Can your window be moved around?</span>
@@ -553,7 +553,7 @@
                         <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">({hue, brightness, gray}<span class="Arrow"> => </span><span class="Argument">color)</span> <span class="Explanation"> $ The color of your rectangle.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(10<span class="Arrow"> => </span><span class="Argument">roundness)</span> <span class="Explanation"> $ The roundness of the button's corners. Use a roundness greater than 2 for actual rounded corners. Anything lower is ignored.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(10<span class="Arrow"> => </span><span class="Argument">roundness)</span> <span class="Explanation"> $ The roundness of the rectangle's corners. Use a roundness greater than 2 for actual rounded corners. Anything lower is ignored.</span>
                     </div>
                     <div>
                         <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
