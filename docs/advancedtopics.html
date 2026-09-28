@@ -151,7 +151,7 @@
                 <div class="Explanation">You'll notice that the output is the same, and that's because we set up the explicit counter so it works the same way as the implicit one. Try incrementing the counter by 2, decrementing, or starting at a different number, and watch the output change. You can see that this is way more flexible than the implicit version.</div>
                 <div class="WideBreak"></div>
 
-                <span class="White" id="Functions">Parameterized Functions, Namespaces, Watches, and Return Values: </span>
+                <span class="White" id="Functions">Parameterized Functions, Namespaces, and Return Values: </span>
                 <div class="Break"></div>
 
                 <div class="Explanation">Most times, when writing a function, you want to include parameters inside of that function. Those parameters can be used to provide additional functionality to that function, as well as make your code cleaner, so you don't have to rely on global variables all the time. The namespaced variables also get deleted upon function end, which is great to save program memory.</div>
@@ -423,7 +423,7 @@
                 <span class="White" id="GUI">Making Graphical User Interfaces (GUIs)</span>
                 <div class="Break"></div>
 
-                <div class="Explanation">As of v4.00, Direct+ supports making interactive Graphical User Interfaces using gscope() blocks and the ginit() command.  These new systems allow users to program full applications in Direct+, expanding beyond the original console system. Before you explore this section, make sure you have a decent understanding of how scope() or gscope() blocks work, as they won't be walked through step-by-step in this section.</div>
+                <div class="Explanation">As of v4.00, Direct+ supports making interactive Graphical User Interfaces using gscope() blocks and the ginit() command.  These new systems allow users to program full applications in Direct+, expanding beyond the original console system. Before you explore this section, make sure you have a decent understanding of how scope() or gscope() blocks work, as they won't be walked through step-by-step in this section. GUI applications are on top of the console, meaning you can use both output methods at once.</div>
                 <div class="WideBreak"></div>
 
                 <div class="Explanation">Defining the Application Window: </div>
@@ -538,13 +538,13 @@
                         <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">({x, y, width, height, color, roundness})</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span><span class="Argument">x)</span> <span class="Explanation"> $ The X position of your rectangle. Coordinate system shown above.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span><span class="Argument">x)</span> <span class="Explanation"> $ The X position of your rectangle. Coordinate system shown above. The center of the rectangle is the coordinate location.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span><span class="Argument">y)</span> <span class="Explanation"> $ The Y position of your rectangle. Coordinate system shown above.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span><span class="Argument">y)</span> <span class="Explanation"> $ The Y position of your rectangle. Coordinate system shown above. The center of the rectangle is the coordinate location.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(100<span class="Arrow"> => </span><span class="Argument">width)</span> <span class="Explanation"> $ The width of your rectangle. Width/height expand from center of the rectangle.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(100<span class="Arrow"> => </span><span class="Argument">width)</span> <span class="Explanation"> $ The width of your rectangle. Width/height expand from the center of the rectangle.</span>
                     </div>
                     <div>
                         <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(100<span class="Arrow"> => </span><span class="Argument">height)</span> <span class="Explanation"> $ The height of your rectangle.</span>
@@ -575,10 +575,10 @@
                         <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">({x, y, diameter, color})</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span><span class="Argument">x)</span> <span class="Explanation"> $ The X position of your circle. Coordinate system shown above.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span><span class="Argument">x)</span> <span class="Explanation"> $ The X position of your circle. Coordinate system shown above. The center of the circle is the coordinate location.</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span><span class="Argument">y)</span> <span class="Explanation"> $ The Y position of your circle. Coordinate system shown above.</span>
+                        <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(0<span class="Arrow"> => </span><span class="Argument">y)</span> <span class="Explanation"> $ The Y position of your circle. Coordinate system shown above. The center of the circle is the coordinate location.</span>
                     </div>
                     <div>
                         <span class="Keyword">&ensp;&ensp;val</span><span class="Argument">(100<span class="Arrow"> => </span><span class="Argument">diameter)</span> <span class="Explanation"> $ The diameter of your circle. Expands from the center of the circle.</span>
