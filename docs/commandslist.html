@@ -32,7 +32,7 @@
                 <div class="Explanation">{num} = Number (Including floats and integers).</div>
                 <div class="Explanation">{str} = String (Wrap this in quotes!).</div>
                 <div class="Explanation">{bool} = Boolean value (either true or false).</div>
-                <div class="Explanation">{any} = Any common data type is accepted.</div>
+                <div class="Explanation">{any} = Any common data type is accepted ({none} is accepted as well).</div>
                 <div class="Break"></div>
                 
                 <div class="Explanation">Special data types:</div>
@@ -40,6 +40,7 @@
                 <div class="Explanation">{ref} = run() reference.</div>
                 <div class="Explanation">{file} = A name of a Direct+ file.</div>
                 <div class="Explanation">{variable} = A variable name (without the @).</div>
+                <div class="Explanation">{none} = A value produced by a command that doesn't return a result. For example, an invalid letter() index returns {none}.</div>
                 <div class="WideBreak"></div>
 
                 <div class="Explanation">Direct+ is one-indexed, and 0 is reserved for special case operations and is not a valid element index. (Like in lists or as a failure method)</div>
@@ -160,7 +161,7 @@
                     <div class="Break"></div>
                     <span class="Operator">&gt;&gt;</span>
                 </div>
-                <div class="Explanation"> Loops the code {num} times. If {num} is 0, the code loops infinitely. Since the interpreter updates every newline and code can be stopped anytime, infinite loops aren't a safety hazard. Nesting is fully supported with all control flow elements. Use loop({num}, {name}) to automatically create a namespaced counter variable in the loop. (See <a class="LinkAdvancedTopics" href="advancedtopics.html#ImplicitLoops">Advanced Topics</a> for more information)</div>
+                <div class="Explanation"> Loops the code {num} times. If {num} is 0, the code loops infinitely. Since the interpreter updates every newline and code can be stopped anytime, infinite loops aren't a safety hazard. However, infinite loops only work if 0 is a literal, not provided by a variable, to prevent interpreter stalls based on input. The loop is skipped if 0 is given by a variable. Nesting is fully supported with all control flow elements. Use loop({num}, {name}) to automatically create a namespaced counter variable in the loop. (See <a class="LinkAdvancedTopics" href="advancedtopics.html#ImplicitLoops">Advanced Topics</a> for more information)</div>
                 <div class="WideBreak"></div>
 
                 <div class="CodeBlock">
@@ -288,13 +289,13 @@
                 <div class="CodeBlock">
                     <span class="Keyword">item</span><span class="Argument">(</span><span class="Explanation">{list}</span><span class="Argument">, </span><span class="Explanation">{num}</span><span class="Arrow"> => </span><span class="Argument">destination)</span>
                 </div>
-                <div class="Explanation">Returns the {num}'th item in {list}. Returns an empty string ("") if the index is invalid. Also can be implicitly referenced. For example, if a = {"apple", "banana"}, then @a:1 returns "apple".</div>
+                <div class="Explanation">Returns the {num}'th item in {list}. Returns none if the index is invalid. Also can be implicitly referenced. For example, if a = {"apple", "banana"}, then @a:1 returns "apple".</div>
                 <div class="WideBreak"></div>
 
                 <div class="CodeBlock">
                     <span class="Keyword">numof</span><span class="Argument">(</span><span class="Explanation">{list}</span><span class="Argument">, </span><span class="Explanation">{str}</span><span class="Arrow"> => </span><span class="Argument">destination)</span>
                 </div>
-                <div class="Explanation">Returns the index of the first instance of {str} in {list}. Returns 0 if the item is not found.</div>
+                <div class="Explanation">Returns the index of the first instance of {str} in {list}. Returns none if the item is not found.</div>
                 <div class="WideBreak"></div>
 
                 <span class="White" id="Files">Files: </span>
@@ -324,7 +325,7 @@
                 <div class="CodeBlock">
                     <span class="Keyword">type</span><span class="Argument">(</span><span class="Explanation">{any}</span><span class="Arrow"> => </span><span class="Argument">destination)</span>
                 </div>
-                <div class="Explanation">Gets the type of the input given. Types include num, str, bool, list, and undefined. (Undefined is used when the type cannot be resolved.)</div>
+                <div class="Explanation">Gets the type of the input given. Types include num, str, bool, list, none, and undefined. Undefined is used when the type cannot be resolved (ex: malformed string). and none is used when a command has no result</div>
                 <div class="WideBreak"></div>
                 
                 <div class="CodeBlock">
@@ -352,7 +353,7 @@
                     <div class="Break"></div>
                     <span class="Operator">&gt;&gt;</span>
                 </div>
-                <div class="Explanation">Creates a namespaced data block where you can define variables. Other commands can be placed inside scope blocks, but only variable definitions are recommended. The second optional string acts as an additional identifier. Scope blocks can be nested. Variables in scope blocks are referenced by order of nested scope blocks: @cat:barley:food:salmon:calories. cat:barley are grouped, with 'cat' being the name and 'barley' being the ID. Then, food:salmon are grouped the same way, and 'calories' is the variable.</div>
+                <div class="Explanation">Creates a namespaced data block where you can define variables. Other commands can be placed inside scope blocks, but only variable definitions are recommended. The second optional string acts as an additional identifier. Scope blocks can be nested. Variables in scope blocks are referenced by order of nested scope blocks: @cat:barley:food:salmon:calories. cat:barley are grouped, with 'cat' being the name and 'barley' being the ID. Then, food:salmon are grouped the same way, and 'calories' is the variable. This command only works in the main file.</div>
                 <div class="WideBreak"></div>
 
                 <div class="CodeBlock">
@@ -360,19 +361,19 @@
                     <div class="Break"></div>
                     <span class="Operator">&gt;&gt;</span>
                 </div>
-                <div class="Explanation">Works just like a scope() block, but they're compiled by the GUI engine into an application and displayed by running ginit(). (See <a class="LinkAdvancedTopics" href="advancedtopics.html">Advanced Topics</a> for more information)</div>
+                <div class="Explanation">Works just like a scope() block, but they're compiled by the GUI engine into an application and displayed by running ginit(). This command only works in the main file. (See <a class="LinkAdvancedTopics" href="advancedtopics.html">Advanced Topics</a> for more information)</div>
                 <div class="WideBreak"></div>
 
                 <div class="CodeBlock">
                     <span class="Keyword">ginit</span><span class="Argument">()</span>
                 </div>
-                <div class="Explanation">Builds the GUI from the defined gscope tree. Must be called after all gscope blocks are defined. (See <a class="LinkAdvancedTopics" href="advancedtopics.html">Advanced Topics</a> for more information)</div>
+                <div class="Explanation">Builds the GUI from the defined gscope tree. Must be called after all gscope blocks are defined. This command only works in the main file. (See <a class="LinkAdvancedTopics" href="advancedtopics.html">Advanced Topics</a> for more information)</div>
                 <div class="WideBreak"></div>
 
                 <div class="CodeBlock">
                     <span class="Keyword">exec</span><span class="Argument">()</span>
                 </div>
-                <div class="Explanation">Executes an arbitrary string as Direct+ code. Cannot execute block commands such as conditionals. Also can't run functions (though this might change in the future).</div>
+                <div class="Explanation">Executes an arbitrary string as Direct+ code. Cannot execute block commands such as conditionals. Also can't run functions (though this might change in the future). Exec() uses the same variable registry and interpreter as normal Direct+.</div>
                 <div class="WideBreak"></div>
 
                 <div class="Explanation">Places to visit next:</div>
