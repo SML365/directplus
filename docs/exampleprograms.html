@@ -308,7 +308,7 @@
                         <span class="Keyword">val</span><span class="Argument">({<span class="String">"banana"</span>, <span class="String">"node3"</span>}<span class="Arrow"> => </span>node2)</span>
                     </div>
                     <div>
-                        <span class="Keyword">val</span><span class="Argument">({<span class="String">"cherry"</span>, <span class="String">"null"</span>}<span class="Arrow"> => </span>node3)</span>
+                        <span class="Keyword">val</span><span class="Argument">({<span class="String">"cherry"</span>, <span class="Bool">none</span>}<span class="Arrow"> => </span>node3)</span>
                     </div>
                     <div class="Break"></div>
 
@@ -325,7 +325,7 @@
                     <div class="Break"></div>
 
                     <div>
-                        <span class="Keyword">&ensp;&ensp;if</span><span class="Argument">(<span class="String">"<span class="Double">@@current_node</span>|:2"</span><span class="Operator"> == </span><span class="String">"null"</span><span class="Argument">)</span><span class="Operator"> &lt;&lt;</span>
+                        <span class="Keyword">&ensp;&ensp;if</span><span class="Argument">(<span class="String">"<span class="Double">@@current_node</span>|:2"</span><span class="Operator"> == </span><span class="Bool">none</span><span class="Argument">)</span><span class="Operator"> &lt;&lt;</span>
                     </div>
                     <div>
                         <span class="Keyword">&ensp;&ensp;&ensp;&ensp;break</span><span class="Argument">()</span>
@@ -580,13 +580,10 @@
                         <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Operator">&gt;&gt;</span>
                     </div>
                     <div>
-                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">numof</span><span class="Argument">(</span><span class="Variable">@__disk:root\bin</span><span class="Argument">, </span><span class="Variable">@comm</span><span class="Arrow"> =&gt; </span><span class="Argument">tmp1</span><span class="Argument">)</span>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">numof</span><span class="Argument">(</span><span class="Variable">@__disk:root\bin</span><span class="Argument">, </span><span class="Variable">@comm</span><span class="Arrow"> => </span><span class="Argument">tmp1</span><span class="Argument">)</span>
                     </div>
                     <div>
-                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">item</span><span class="Argument">(</span><span class="Variable">@__disk:root\bin</span><span class="Argument">, </span><span class="Variable">@tmp1</span><span class="Arrow"> =&gt; </span><span class="Argument">tmp2</span><span class="Argument">)</span>
-                    </div>
-                    <div>
-                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">if</span><span class="Argument">(</span><span class="Variable">@tmp1</span><span class="Operator"> == </span><span class="Argument">0</span><span class="Argument">) </span><span class="Operator">&lt;&lt;</span>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">if</span><span class="Argument">(</span><span class="Variable">@tmp1</span><span class="Operator"> == </span><span class="Bool">none</span><span class="Argument">) </span><span class="Operator">&lt;&lt;</span>
                     </div>
                     <div>
                         <span class="Argument">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/__log:error</span><span class="Argument">[</span><span class="String">"can't execute <span class="Variable">@comm</span>|: no such file or directory"</span><span class="Argument">])</span>
@@ -596,6 +593,9 @@
                     </div>
                     <div>
                         <span class="Argument">&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">else</span><span class="Argument">()</span><span class="Operator"> &lt;&lt;</span>
+                    </div>
+                    <div>
+                        <span class="Argument">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">item</span><span class="Argument">(</span><span class="Variable">@__disk:root\bin</span><span class="Argument">, </span><span class="Variable">@tmp1</span><span class="Arrow"> => </span><span class="Argument">tmp2</span><span class="Argument">)</span>
                     </div>
                     <div>
                         <span class="Argument">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span><span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/</span><span class="Variable">@tmp2</span><span class="Argument">)</span>
