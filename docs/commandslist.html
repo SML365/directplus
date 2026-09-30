@@ -29,9 +29,9 @@
                 <div class="Break"></div>
                 
                 <div class="Explanation">Common Data Types:</div>
-                <div class="Explanation">{num} = Number (Including floats and integers).</div>
-                <div class="Explanation">{str} = String (Wrap this in quotes!).</div>
-                <div class="Explanation">{bool} = Boolean value (either true or false).</div>
+                <div class="Explanation">{num} = Number (Including floats and integers). Rejects {bool} or {none}.</div>
+                <div class="Explanation">{str} = String (Wrap this in quotes!). Rejects {bool} or {none}.</div>
+                <div class="Explanation">{bool} = Boolean value (either true or false). true/false will always be parsed as a {bool}, regardless of quotes.</div>
                 <div class="Explanation">{any} = Any common data type is accepted ({none} is accepted as well).</div>
                 <div class="Break"></div>
                 
@@ -40,7 +40,7 @@
                 <div class="Explanation">{ref} = run() reference.</div>
                 <div class="Explanation">{file} = A name of a Direct+ file.</div>
                 <div class="Explanation">{variable} = A variable name (without the @).</div>
-                <div class="Explanation">{none} = A value produced by a command that doesn't return a result. For example, an invalid letter() index returns {none}.</div>
+                <div class="Explanation">{none} = A value produced by a command that doesn't return a result. For example, an invalid letter() index returns {none}. none will always be parsed as {none}, regardless of quotes.</div>
                 <div class="WideBreak"></div>
 
                 <div class="Explanation">Direct+ is one-indexed, and 0 is reserved for special case operations and is not a valid element index. (Like in lists or as a failure method)</div>
@@ -233,7 +233,7 @@
                 <div class="CodeBlock">
                     <span class="Keyword">letter</span><span class="Argument">(</span><span class="Explanation">{num}</span><span class="Argument">, </span><span class="Explanation">{str}</span><span class="Arrow"> => </span><span class="Argument">destination)</span>
                 </div>
-                <div class="Explanation">Returns the specified index {num} of {str}.</div>
+                <div class="Explanation">Returns the specified index {num} of {str}. Returns none if the index is out of range.</div>
                 <div class="WideBreak"></div>
 
                 <div class="CodeBlock">
