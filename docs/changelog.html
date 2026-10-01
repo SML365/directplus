@@ -17,6 +17,7 @@
 
                 <pre class="Gray">
 e = experimental, s = speed/stability, n = new version
+9/30/2026: Fixed a GUI page bug where pages like "page1" + "page10" both rendered if "page1" was selected. (v4.31s)
 9/29/2026: Added type checking to injected values through variables, and fixed a couple of bugs involving {none}. (v4.30s)
 9/28/2026: Added "none" datatype instead of ""/0 sentinels. (v4.29s)
 9/27/2026: Fixed the GUI color system erroring out if anything but a list was entered, including a blank value. Also moved input logic from the console to the interpreter itself to make Portable builds easier. Also added the pointgroup GUI widget. (v4.28s)
@@ -210,18 +211,18 @@ Interpreter Architecture:
 - Arrow Assignment parsing: Frozen
 - Namespacing: Frozen
 - Multi-file: Stable
-- Syntax table: Stable (Although inefficient, may get replaced soon)
-- Error system: Stable (Although inefficient and hard to maintain, may get replaced soon)
+- Syntax table: Stable
+- Error system: Stable
 
-Commands (Including their internal implementations):
+Commands (Not Including their internal implementations):
 - Paste: Frozen
 - Add/Sub/Mul/Div/Random/Mod/Sqrt: Frozen
 - Concat/Letter/Length/Contains/Slice: Frozen
 - Enter/Delete/Replace/Item/Numof: Frozen
 - If/Loop/Turbo/Scope: Stable
 - Run: Frozen (Multi-file run: Stable)
-- Scope/Build: Stable
-- Console: Stable
+- Scope/Gscope/Ginit: Stable
+- Clear/Exit: Stable
 - Use: Stable
 - Wait/Type/Exists: Frozen
 
@@ -230,7 +231,6 @@ Language Features:
 - Comments: Frozen
 - GUI System: In Development
 - Run System: Stable
-- Watches: Stable
 - Cloud-based extension installation: In Development
 - Lists: Stable
 
