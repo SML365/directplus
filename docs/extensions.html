@@ -243,31 +243,6 @@
                     <div class="Explanation">Logs a success message to the console. Shows up in green.</div>
                     <div class="WideBreak"></div>
 
-                    <span class="White" id="InstallingExtensions">Installing Extensions: </span>
-                    <div class="Break"></div>
-
-                    <div class="Explanation">Using Direct+'s built in extension manager, you can install extensions from the Direct+ server! Note that this technology is very new and not the most stable. All install extensions are prefixed with _, unlike built-in extensions, which are prefixed with __.</div>
-                    <div class="WideBreak"></div>
-                    
-                    <div class="Explanation">Supported Extensions</div>
-                    <div class="Break"></div>
-
-                    <div class="CodeBlock">
-                    <pre class="Explanation">
-name          use case                               commands
-
-_test         test if extension system works         /_test:test
-_branflakes   functional branflakes interpreter      /_branflakes:init[cell_count], /_branflakes:exec[code]
-</pre>
-                    </div>
-                    <div class="WideBreak"></div>
-
-                    <pre class="Explanation">
-Technical Stuff for Technical People:
-Direct+'s extensions server is powered by <a href="https://github.com/TimMcCool/scratchattach" class="Link">ScratchAttach</a>. Direct+'s packets use 2-integer encoding, meaning that for each character, two integers are used to represent it. For example, the character 'a' is represented as '11'. This is the same encoding that pressing [' + s / l] uses to save and load Direct+ files! Direct+ module installations only work in TurboWarp. The encoded packets are transferred at a speed of around 1 kilobyte per second, or around 500 bytes of unencoded text per second. They are transferred with a 1s delay enforced by the client, to prevent one client from using all the resources and triggering errors in other installations happening at the same once, though only one installation is happening most of the time. There are four installation buffers, meaning four parallel installations can happen at once (theoretically) and get reset once installation finishes. If something goes wrong, the state may not return to normal, so all variables are reset every few hours. If this reset happens during a download, it may cause a download failiure, which is safe but annoying. Reset times are not finalized yet and will be displayed here once finalized. 
-                    </pre>
-                    <div class="WideBreak"></div>
-
                     <div class="Explanation">Places to visit next:</div>
                     <div class="Explanation"><a class="LinkExamplePrograms" href="exampleprograms.html">Example Programs</a></div>
                 </div>
