@@ -243,6 +243,21 @@
                     <div class="Explanation">Logs a success message to the console. Shows up in green.</div>
                     <div class="WideBreak"></div>
 
+                    <span class="White" id="Display">Display: </span>
+                    <div class="Break"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Keyword">use</span><span class="Argument">(__display)</span>
+                    </div>
+                    <div class="Explanation">Imports the Display extension, which provides a function for displaying 16x12 black-and-white images to the console.</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Keyword">run</span><span class="Argument">(<span class="Label">/__display:show</span>[contents])</span>
+                    </div>
+                    <div class="Explanation">Shows the specified contents to the display. It supports animation by chaining /show calls. It uses a run-based compression codec in this format: [starting_pixel][runs (automatically switch)].[starting_pixel (next row)][runs].[repeat for 12 rows]. For example, "1p.1p.1p.1p.1p.1p.1p.1p.1p.1p.1p.1p." is a white screen. The letters represent the run length, where a = 1, b = 2, etc. "1dddd.1dddd.1dddd.1dddd.0dddd.0dddd.0dddd.0dddd.1dddd.1dddd.1dddd.1dddd." is a checkerboard pattern (4x4).</div>
+                    <div class="WideBreak"></div>
+
                     <div class="Explanation">Places to visit next:</div>
                     <div class="Explanation"><a class="LinkExamplePrograms" href="exampleprograms.html">Example Programs</a></div>
                 </div>
