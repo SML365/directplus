@@ -332,9 +332,9 @@
 
                     <div class="Gray">utils</div>
                     <div class="Break"></div>
-
+                    
                     <div>
-                        <span class="Keyword">var</span><span class="Argument">(result)</span>
+                        <span class="Comment">$ typically you'd define variables here but none are needed</span>
                     </div>
                     <div>
                         <span class="Terminator">;</span>
@@ -345,10 +345,13 @@
                         <span class="Label">/mul_by_2</span><span class="Argument">[num]</span>
                     </div>
                     <div>
-                        <span class="Keyword">&ensp;&ensp;mul</span><span class="Argument">(<span class="Variable">@mul_by_2:num</span>, 2 <span class="Arrow"> => </span>result)</span>
+                        <span class="Keyword">&ensp;&ensp;local</span><span class="Argument">(result)</span>
                     </div>
                     <div>
-                        <span class="Label">/return</span><span class="Argument">[<span class="Variable">@result</span>]</span>
+                        <span class="Keyword">&ensp;&ensp;mul</span><span class="Argument">(<span class="Variable">@mul_by_2:num</span>, 2 <span class="Arrow"> => </span>mul_by_2:result)</span>
+                    </div>
+                    <div>
+                        <span class="Label">/return</span><span class="Argument">[<span class="Variable">@mul_by_2:result</span>]</span>
                     </div>
                     <div>
                         <span class="Terminator">;</span>
